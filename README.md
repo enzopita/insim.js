@@ -24,6 +24,10 @@ const insim = new InSim({
   },
 });
 
+insim.on('error', error => {
+  console.log('Error', error);
+});
+
 insim.bind<IS_MSO>(PacketType.ISP_MSO, (data) => {
   console.log('Chat message', data);
 });
