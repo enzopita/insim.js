@@ -69,22 +69,22 @@ The InSim.js library is under development, so it does not have full functionalit
 
 ### Packets
 
-We have a total of 64 packages to be implemented. You will have an overview of their implementation in the library below.
+We have a total of 26/64 packages to be implemented. You will have an overview of their implementation in the library below.
 
 - [ ] IS_ACR
 - [ ] IS_AXI
 - [ ] IS_AXM
 - [ ] IS_AXO
-- [ ] IS_BFN
-- [ ] IS_BTC
-- [ ] IS_BTN
-- [ ] IS_BTT
+- [x] IS_BFN
+- [x] IS_BTC
+- [x] IS_BTN
+- [x] IS_BTT
 - [ ] IS_CCH
 - [ ] IS_CIM
-- [ ] IS_CNL
-- [ ] IS_CON
+- [x] IS_CNL
+- [x] IS_CON
 - [ ] IS_CPP
-- [ ] IS_CPR
+- [x] IS_CPR
 - [ ] IS_CRS
 - [ ] IS_CSC
 - [ ] IS_FIN
@@ -94,28 +94,28 @@ We have a total of 64 packages to be implemented. You will have an overview of t
 - [ ] IS_III
 - [x] IS_ISI
 - [x] IS_ISM
-- [ ] IS_JRR
+- [x] IS_JRR
 - [ ] IS_LAP
-- [ ] IS_MCI
+- [x] IS_MCI
 - [ ] IS_MOD
 - [ ] IS_MSL
 - [x] IS_MSO
-- [ ] IS_MST
-- [ ] IS_MSX
+- [x] IS_MST
+- [x] IS_MSX
 - [x] IS_MTC
-- [ ] IS_NCI
-- [ ] IS_NCN
+- [x] IS_NCI
+- [x] IS_NCN
 - [ ] IS_NLP
-- [ ] IS_NPL
-- [ ] IS_OBH
-- [ ] IS_OCO
+- [x] IS_NPL
+- [x] IS_OBH
+- [x] IS_OCO
 - [ ] IS_PEN
 - [ ] IS_PFL
 - [ ] IS_PIT
 - [ ] IS_PLA
-- [ ] IS_PLC
-- [ ] IS_PLL
-- [ ] IS_PLP
+- [x] IS_PLC
+- [x] IS_PLL
+- [x] IS_PLP
 - [ ] IS_PSF
 - [ ] IS_REO
 - [ ] IS_RES
@@ -132,8 +132,8 @@ We have a total of 64 packages to be implemented. You will have an overview of t
 - [x] IS_TINY
 - [ ] IS_TOC
 - [ ] IS_TTC
-- [ ] IS_UCO
-- [ ] IS_VER
+- [x] IS_UCO
+- [x] IS_VER
 - [ ] IS_VTN
 
 ### InSim Relay
