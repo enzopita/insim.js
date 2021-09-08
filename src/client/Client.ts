@@ -6,7 +6,9 @@ import { PacketType } from '../types/PacketType';
 import { Packet, ISerializable } from '../structures/Packet';
 import { BindingManager } from './BindingManager';
 import { EventsManager } from './EventsManager';
-import { IS_ISI, IS_TINY } from './packets';
+import { IS_ISI, IS_TINY, IS_MST, IS_MSX } from './packets';
+import { Constants } from '../structures/Constants';
+import { LFSEncoding } from '../utils/encoding/LFSEncoding';
 
 export class Client extends EventEmitter {
   public tcpSocket = new TcpSocket(this);
@@ -36,8 +38,12 @@ export class Client extends EventEmitter {
     this.tcpSocket.disconnect();
   }
 
-  public send(data: Buffer | ISerializable): void {
+  public send(data: Buffer | string | ISerializable, args?: string[]): void {
+    if (typeof data === 'string')
+      data = this.getMessagePacket(data, args).serialize();
+
     if ('serialize' in data) data = data.serialize();
+
     this.tcpSocket.send(data);
   }
 
@@ -61,6 +67,28 @@ export class Client extends EventEmitter {
       this.logger.debug(`sending ping`);
       this.send(new IS_TINY());
     });
+  }
+
+  private getMessagePacket(
+    message: string,
+    args: string[] = [],
+  ): Packet & ISerializable {
+    const msxLen = 96;
+    const mstLen = 64;
+
+    message = [message, ...args].join(' ');
+
+    if (message.startsWith(Constants.COMMAND_PREFIX)) {
+      return new IS_MST({ message });
+    }
+
+    const messageBytes = LFSEncoding.getBytes(message, msxLen);
+
+    if (messageBytes.byteLength < mstLen) {
+      return new IS_MST({ message });
+    }
+
+    return new IS_MSX({ message });
   }
 }
 
