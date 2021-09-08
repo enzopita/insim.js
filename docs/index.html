@@ -1,0 +1,550 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>insim.js</title>
+	<meta name="description" content="Documentation for insim.js">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="assets/css/main.css">
+	<script async src="assets/js/search.js" id="search-script"></script>
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="assets/js/search.json" data-base=".">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="index.html" class="title">insim.js</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<h1>insim.js</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<div class="tsd-panel tsd-typography">
+				<a href="#insimjs" id="insimjs" style="color: inherit; text-decoration: none;">
+					<h1>InSim.js</h1>
+				</a>
+				<p>A TypeScript version of the <a href="https://github.com/alexmcbride/insimdotnet">InSim.NET</a> library</p>
+				<a href="#installing" id="installing" style="color: inherit; text-decoration: none;">
+					<h2>Installing</h2>
+				</a>
+				<pre><code class="language-bash"><span style="color: #000000">$ yarn add insim.js</span>
+</code></pre>
+				<a href="#example" id="example" style="color: inherit; text-decoration: none;">
+					<h2>Example</h2>
+				</a>
+				<pre><code class="language-typescript"><span style="color: #AF00DB">import</span><span style="color: #000000"> { </span><span style="color: #001080">InSim</span><span style="color: #000000">, </span><span style="color: #001080">PacketType</span><span style="color: #000000"> } </span><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;insim.js&#039;</span><span style="color: #000000">;</span>
+
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">insim</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">InSim</span><span style="color: #000000">({</span>
+<span style="color: #000000">  </span><span style="color: #001080">connection:</span><span style="color: #000000"> {</span>
+<span style="color: #000000">    </span><span style="color: #001080">host:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;127.0.0.1&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">    </span><span style="color: #001080">port:</span><span style="color: #000000"> </span><span style="color: #098658">29999</span><span style="color: #000000">,</span>
+<span style="color: #000000">  },</span>
+
+<span style="color: #000000">  </span><span style="color: #001080">insimOptions:</span><span style="color: #000000"> {</span>
+<span style="color: #000000">    </span><span style="color: #001080">name:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;InSim.js&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">    </span><span style="color: #001080">prefix:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;!&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">  },</span>
+<span style="color: #000000">});</span>
+
+<span style="color: #001080">insim</span><span style="color: #000000">.</span><span style="color: #795E26">bind</span><span style="color: #000000">&lt;</span><span style="color: #267F99">IS_MSO</span><span style="color: #000000">&gt;(</span><span style="color: #001080">PacketType</span><span style="color: #000000">.</span><span style="color: #0070C1">ISP_MSO</span><span style="color: #000000">, (</span><span style="color: #001080">data</span><span style="color: #000000">) </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> {</span>
+<span style="color: #000000">  </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;Chat message&#039;</span><span style="color: #000000">, </span><span style="color: #001080">data</span><span style="color: #000000">);</span>
+<span style="color: #000000">});</span>
+
+<span style="color: #001080">insim</span><span style="color: #000000">.</span><span style="color: #795E26">connect</span><span style="color: #000000">();</span>
+</code></pre>
+				<a href="#coverage" id="coverage" style="color: inherit; text-decoration: none;">
+					<h2>Coverage</h2>
+				</a>
+				<p>The InSim.js library is under development, so it does not have full functionality compared to stable libraries published over a much longer period of time.</p>
+				<a href="#flags" id="flags" style="color: inherit; text-decoration: none;">
+					<h3>Flags</h3>
+				</a>
+				<ul>
+					<li><input checked="" disabled="" type="checkbox"> PacketType</li>
+					<li><input checked="" disabled="" type="checkbox"> PassengerFlags</li>
+					<li><input checked="" disabled="" type="checkbox"> PitWorkFlags</li>
+					<li><input checked="" disabled="" type="checkbox"> PlayerFlags</li>
+					<li><input checked="" disabled="" type="checkbox"> PlayerTypes</li>
+					<li><input checked="" disabled="" type="checkbox"> PMOFlags</li>
+					<li><input checked="" disabled="" type="checkbox"> RaceFlags</li>
+					<li><input checked="" disabled="" type="checkbox"> ReplayOptions</li>
+					<li><input checked="" disabled="" type="checkbox"> UserType</li>
+					<li><input checked="" disabled="" type="checkbox"> ObjectFlags</li>
+					<li><input checked="" disabled="" type="checkbox"> InSimFlags</li>
+					<li><input checked="" disabled="" type="checkbox"> HostFlags</li>
+					<li><input checked="" disabled="" type="checkbox"> HlvcFlags</li>
+					<li><input checked="" disabled="" type="checkbox"> ContactFlags</li>
+					<li><input checked="" disabled="" type="checkbox"> ConfirmationFlags</li>
+					<li><input checked="" disabled="" type="checkbox"> CompCarFlags</li>
+					<li><input checked="" disabled="" type="checkbox"> ClickFlags</li>
+					<li><input checked="" disabled="" type="checkbox"> CharacterModifiers</li>
+					<li><input checked="" disabled="" type="checkbox"> CarFlags</li>
+					<li><input checked="" disabled="" type="checkbox"> ButtonStyles</li>
+					<li><input checked="" disabled="" type="checkbox"> BulbInfo</li>
+					<li><input checked="" disabled="" type="checkbox"> ActionFlags</li>
+					<li><input checked="" disabled="" type="checkbox"> OutGaugeFlags</li>
+					<li><input checked="" disabled="" type="checkbox"> DashLightFlags</li>
+					<li><input checked="" disabled="" type="checkbox"> StateFlags</li>
+					<li><input checked="" disabled="" type="checkbox"> MessageSound</li>
+				</ul>
+				<a href="#packets" id="packets" style="color: inherit; text-decoration: none;">
+					<h3>Packets</h3>
+				</a>
+				<p>We have a total of 64 packages to be implemented. You will have an overview of their implementation in the library below.</p>
+				<ul>
+					<li><input disabled="" type="checkbox"> IS_ACR</li>
+					<li><input disabled="" type="checkbox"> IS_AXI</li>
+					<li><input disabled="" type="checkbox"> IS_AXM</li>
+					<li><input disabled="" type="checkbox"> IS_AXO</li>
+					<li><input disabled="" type="checkbox"> IS_BFN</li>
+					<li><input disabled="" type="checkbox"> IS_BTC</li>
+					<li><input disabled="" type="checkbox"> IS_BTN</li>
+					<li><input disabled="" type="checkbox"> IS_BTT</li>
+					<li><input disabled="" type="checkbox"> IS_CCH</li>
+					<li><input disabled="" type="checkbox"> IS_CIM</li>
+					<li><input disabled="" type="checkbox"> IS_CNL</li>
+					<li><input disabled="" type="checkbox"> IS_CON</li>
+					<li><input disabled="" type="checkbox"> IS_CPP</li>
+					<li><input disabled="" type="checkbox"> IS_CPR</li>
+					<li><input disabled="" type="checkbox"> IS_CRS</li>
+					<li><input disabled="" type="checkbox"> IS_CSC</li>
+					<li><input disabled="" type="checkbox"> IS_FIN</li>
+					<li><input disabled="" type="checkbox"> IS_FLG</li>
+					<li><input disabled="" type="checkbox"> IS_HCP</li>
+					<li><input disabled="" type="checkbox"> IS_HLV</li>
+					<li><input disabled="" type="checkbox"> IS_III</li>
+					<li><input checked="" disabled="" type="checkbox"> IS_ISI</li>
+					<li><input checked="" disabled="" type="checkbox"> IS_ISM</li>
+					<li><input disabled="" type="checkbox"> IS_JRR</li>
+					<li><input disabled="" type="checkbox"> IS_LAP</li>
+					<li><input disabled="" type="checkbox"> IS_MCI</li>
+					<li><input disabled="" type="checkbox"> IS_MOD</li>
+					<li><input disabled="" type="checkbox"> IS_MSL</li>
+					<li><input checked="" disabled="" type="checkbox"> IS_MSO</li>
+					<li><input disabled="" type="checkbox"> IS_MST</li>
+					<li><input disabled="" type="checkbox"> IS_MSX</li>
+					<li><input checked="" disabled="" type="checkbox"> IS_MTC</li>
+					<li><input disabled="" type="checkbox"> IS_NCI</li>
+					<li><input disabled="" type="checkbox"> IS_NCN</li>
+					<li><input disabled="" type="checkbox"> IS_NLP</li>
+					<li><input disabled="" type="checkbox"> IS_NPL</li>
+					<li><input disabled="" type="checkbox"> IS_OBH</li>
+					<li><input disabled="" type="checkbox"> IS_OCO</li>
+					<li><input disabled="" type="checkbox"> IS_PEN</li>
+					<li><input disabled="" type="checkbox"> IS_PFL</li>
+					<li><input disabled="" type="checkbox"> IS_PIT</li>
+					<li><input disabled="" type="checkbox"> IS_PLA</li>
+					<li><input disabled="" type="checkbox"> IS_PLC</li>
+					<li><input disabled="" type="checkbox"> IS_PLL</li>
+					<li><input disabled="" type="checkbox"> IS_PLP</li>
+					<li><input disabled="" type="checkbox"> IS_PSF</li>
+					<li><input disabled="" type="checkbox"> IS_REO</li>
+					<li><input disabled="" type="checkbox"> IS_RES</li>
+					<li><input disabled="" type="checkbox"> IS_RIP</li>
+					<li><input disabled="" type="checkbox"> IS_RST</li>
+					<li><input disabled="" type="checkbox"> IS_SCC</li>
+					<li><input disabled="" type="checkbox"> IS_SCH</li>
+					<li><input disabled="" type="checkbox"> IS_SFP</li>
+					<li><input disabled="" type="checkbox"> IS_SLC</li>
+					<li><input disabled="" type="checkbox"> IS_SMALL</li>
+					<li><input disabled="" type="checkbox"> IS_SPX</li>
+					<li><input disabled="" type="checkbox"> IS_SSH</li>
+					<li><input disabled="" type="checkbox"> IS_STA</li>
+					<li><input checked="" disabled="" type="checkbox"> IS_TINY</li>
+					<li><input disabled="" type="checkbox"> IS_TOC</li>
+					<li><input disabled="" type="checkbox"> IS_TTC</li>
+					<li><input disabled="" type="checkbox"> IS_UCO</li>
+					<li><input disabled="" type="checkbox"> IS_VER</li>
+					<li><input disabled="" type="checkbox"> IS_VTN</li>
+				</ul>
+				<a href="#insim-relay" id="insim-relay" style="color: inherit; text-decoration: none;">
+					<h3>InSim Relay</h3>
+				</a>
+				<ul>
+					<li><input disabled="" type="checkbox"> IR_ARP</li>
+					<li><input disabled="" type="checkbox"> IR_ARQ</li>
+					<li><input disabled="" type="checkbox"> IR_ERR</li>
+					<li><input disabled="" type="checkbox"> IR_HLR</li>
+					<li><input disabled="" type="checkbox"> IR_HOS</li>
+					<li><input disabled="" type="checkbox"> IR_SEL</li>
+				</ul>
+				<a href="#sockets" id="sockets" style="color: inherit; text-decoration: none;">
+					<h3>Sockets</h3>
+				</a>
+				<ul>
+					<li><input checked="" disabled="" type="checkbox"> TcpSocket</li>
+					<li><input disabled="" type="checkbox"> UdpSocket</li>
+				</ul>
+				<a href="#logic" id="logic" style="color: inherit; text-decoration: none;">
+					<h3>Logic</h3>
+				</a>
+				<ul>
+					<li><input checked="" disabled="" type="checkbox"> PacketWriter</li>
+					<li><input checked="" disabled="" type="checkbox"> PacketReader</li>
+				</ul>
+				<a href="#license" id="license" style="color: inherit; text-decoration: none;">
+					<h2>LICENSE</h2>
+				</a>
+				<p>This project is licensed under GPLv3</p>
+			</div>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class=" ">
+						<a href="modules.html">Exports</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+					<li class=" tsd-kind-enum">
+						<a href="enums/ActionFlags.html" class="tsd-kind-icon">Action<wbr>Flags</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/BulbInfo.html" class="tsd-kind-icon">Bulb<wbr>Info</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/ButtonFunction.html" class="tsd-kind-icon">Button<wbr>Function</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/ButtonStyles.html" class="tsd-kind-icon">Button<wbr>Styles</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/CSCAction.html" class="tsd-kind-icon">CSCAction</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/CarFlags.html" class="tsd-kind-icon">Car<wbr>Flags</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/CharacterModifiers.html" class="tsd-kind-icon">Character<wbr>Modifiers</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/ClickFlags.html" class="tsd-kind-icon">Click<wbr>Flags</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/CompCarFlags.html" class="tsd-kind-icon">Comp<wbr>Car<wbr>Flags</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/ConfirmationFlags.html" class="tsd-kind-icon">Confirmation<wbr>Flags</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/ContactFlags.html" class="tsd-kind-icon">Contact<wbr>Flags</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/DashLightFlags.html" class="tsd-kind-icon">Dash<wbr>Light<wbr>Flags</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/HlvcFlags.html" class="tsd-kind-icon">Hlvc<wbr>Flags</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/HostFlags.html" class="tsd-kind-icon">Host<wbr>Flags</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/HostType.html" class="tsd-kind-icon">Host<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/InSimFlags.html" class="tsd-kind-icon">In<wbr>Sim<wbr>Flags</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/JRRAction.html" class="tsd-kind-icon">JRRAction</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/LFSLanguage.html" class="tsd-kind-icon">LFSLanguage</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/LeaveReason.html" class="tsd-kind-icon">Leave<wbr>Reason</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/MessageSound.html" class="tsd-kind-icon">Message<wbr>Sound</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/OCOAction.html" class="tsd-kind-icon">OCOAction</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/OCOIndex.html" class="tsd-kind-icon">OCOIndex</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/ObjectFlags.html" class="tsd-kind-icon">Object<wbr>Flags</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/OutGaugeFlags.html" class="tsd-kind-icon">Out<wbr>Gauge<wbr>Flags</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/PMOFlags.html" class="tsd-kind-icon">PMOFlags</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/PacketType.html" class="tsd-kind-icon">Packet<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/PassengerFlags.html" class="tsd-kind-icon">Passenger<wbr>Flags</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/PitWorkFlags.html" class="tsd-kind-icon">Pit<wbr>Work<wbr>Flags</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/PlayerFlags.html" class="tsd-kind-icon">Player<wbr>Flags</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/PlayerTypes.html" class="tsd-kind-icon">Player<wbr>Types</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/RaceFlags.html" class="tsd-kind-icon">Race<wbr>Flags</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/ReplayOptions.html" class="tsd-kind-icon">Replay<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/SetupFlags.html" class="tsd-kind-icon">Setup<wbr>Flags</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/StateFlags.html" class="tsd-kind-icon">State<wbr>Flags</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/TinyType.html" class="tsd-kind-icon">Tiny<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/TyreCompound.html" class="tsd-kind-icon">Tyre<wbr>Compound</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/UCOAction.html" class="tsd-kind-icon">UCOAction</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/UserType.html" class="tsd-kind-icon">User<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/BaseSocket.html" class="tsd-kind-icon">Base<wbr>Socket</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/CarContOBJ.html" class="tsd-kind-icon">Car<wbr>ContOBJ</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/CarContact.html" class="tsd-kind-icon">Car<wbr>Contact</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/CompCar.html" class="tsd-kind-icon">Comp<wbr>Car</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/IPAddress.html" class="tsd-kind-icon">IPAddress</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/ISP_CPR.html" class="tsd-kind-icon">ISP_<wbr>CPR</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/IS_BFN.html" class="tsd-kind-icon">IS_<wbr>BFN</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/IS_BTC.html" class="tsd-kind-icon">IS_<wbr>BTC</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/IS_BTN.html" class="tsd-kind-icon">IS_<wbr>BTN</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/IS_BTT.html" class="tsd-kind-icon">IS_<wbr>BTT</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/IS_CNL.html" class="tsd-kind-icon">IS_<wbr>CNL</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/IS_CON.html" class="tsd-kind-icon">IS_<wbr>CON</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/IS_ISI.html" class="tsd-kind-icon">IS_<wbr>ISI</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/IS_ISM.html" class="tsd-kind-icon">IS_<wbr>ISM</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/IS_JRR.html" class="tsd-kind-icon">IS_<wbr>JRR</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/IS_MCI.html" class="tsd-kind-icon">IS_<wbr>MCI</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/IS_MSO.html" class="tsd-kind-icon">IS_<wbr>MSO</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/IS_MTC.html" class="tsd-kind-icon">IS_<wbr>MTC</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/IS_NCI.html" class="tsd-kind-icon">IS_<wbr>NCI</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/IS_NCN.html" class="tsd-kind-icon">IS_<wbr>NCN</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/IS_NPL.html" class="tsd-kind-icon">IS_<wbr>NPL</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/IS_OBH.html" class="tsd-kind-icon">IS_<wbr>OBH</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/IS_OCO.html" class="tsd-kind-icon">IS_<wbr>OCO</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/IS_PLC.html" class="tsd-kind-icon">IS_<wbr>PLC</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/IS_PLL.html" class="tsd-kind-icon">IS_<wbr>PLL</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/IS_PLP.html" class="tsd-kind-icon">IS_<wbr>PLP</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/IS_TINY.html" class="tsd-kind-icon">IS_<wbr>TINY</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/IS_UCO.html" class="tsd-kind-icon">IS_<wbr>UCO</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/IS_VER.html" class="tsd-kind-icon">IS_<wbr>VER</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/InSim.html" class="tsd-kind-icon">In<wbr>Sim</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/InSimException.html" class="tsd-kind-icon">In<wbr>Sim<wbr>Exception</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/LFSEncoding.html" class="tsd-kind-icon">LFSEncoding</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/ObjectInfo.html" class="tsd-kind-icon">Object<wbr>Info</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/Packet.html" class="tsd-kind-icon">Packet</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/PacketReader.html" class="tsd-kind-icon">Packet<wbr>Reader</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/PacketWriter.html" class="tsd-kind-icon">Packet<wbr>Writer</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/Tyres.html" class="tsd-kind-icon">Tyres</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/IDeserializable.html" class="tsd-kind-icon">IDeserializable</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/IPacketConstructor.html" class="tsd-kind-icon">IPacket<wbr>Constructor</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/ISerializable.html" class="tsd-kind-icon">ISerializable</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#IGenericPacketProperties" class="tsd-kind-icon">IGeneric<wbr>Packet<wbr>Properties</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-has-type-parameter">
+						<a href="modules.html#IPacketOptionalOptions" class="tsd-kind-icon">IPacket<wbr>Optional<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-has-type-parameter">
+						<a href="modules.html#IPacketOptions" class="tsd-kind-icon">IPacket<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#IsBfnOptions" class="tsd-kind-icon">Is<wbr>Bfn<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#IsBtnOptions" class="tsd-kind-icon">Is<wbr>Btn<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#IsIsiOptions" class="tsd-kind-icon">Is<wbr>Isi<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#IsJrrOptions" class="tsd-kind-icon">Is<wbr>Jrr<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#IsMtcOptions" class="tsd-kind-icon">Is<wbr>Mtc<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#IsOcoOptions" class="tsd-kind-icon">Is<wbr>Oco<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#IsPlcOptions" class="tsd-kind-icon">Is<wbr>Plc<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#IsTinyOptions" class="tsd-kind-icon">Is<wbr>Tiny<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#ObjectInfoOptions" class="tsd-kind-icon">Object<wbr>Info<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="modules.html#Defaults" class="tsd-kind-icon">Defaults</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-constructor tsd-parent-kind-interface"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-interface"><span class="tsd-kind-icon">Method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited property</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private method</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
