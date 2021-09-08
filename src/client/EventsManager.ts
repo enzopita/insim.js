@@ -26,6 +26,7 @@ export class EventsManager {
   }
 
   private _register(packet: Packet): void {
+    this.client.logger.debug(`loaded packet ${PacketType[packet.type]}`);
     this.packets.push(packet);
   }
 }
