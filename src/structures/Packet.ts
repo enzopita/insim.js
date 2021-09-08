@@ -1,11 +1,11 @@
-import { Defaults } from './Constants';
+import { Constants } from './Constants';
 import { PacketType } from '../types/PacketType';
 import { PacketWriter } from '../utils/packets/PacketWriter';
 
 export abstract class Packet {
   public type = PacketType.ISP_NONE;
   public size = 0;
-  public requestId = Defaults.PACKET_REQUEST_ID;
+  public requestId = Constants.PACKET_REQUEST_ID;
 }
 
 export interface IPacketConstructor {
