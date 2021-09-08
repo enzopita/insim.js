@@ -1,5 +1,5 @@
 import { IPacketOptions, ISerializable, Packet } from '../../structures/Packet';
-import { Defaults } from '../../structures/Constants';
+import { Constants } from '../../structures/Constants';
 import { PacketWriter } from '../../utils/packets/PacketWriter';
 import { PacketType } from '../../types/PacketType';
 import type { ClientInSimOptions } from '../Client';
@@ -9,9 +9,9 @@ export class IS_ISI extends Packet implements ISerializable {
   public size = 44;
   public requestId = 1;
 
-  public name = Defaults.INSIM_NAME;
-  public prefix = Defaults.INSIM_PREFIX;
-  public version = Defaults.INSIM_VERSION;
+  public name = Constants.INSIM_NAME;
+  public prefix = Constants.INSIM_PREFIX;
+  public version = Constants.INSIM_VERSION;
   public password = '';
   public flags = 0;
   public interval = 0;
