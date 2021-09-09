@@ -1,4 +1,4 @@
-const { InSim, PacketType } = require('../dist');
+const { InSim, PacketType } = require('insim.js');
 
 const insim = new InSim({
   host: '127.0.0.1',
