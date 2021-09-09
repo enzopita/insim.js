@@ -1,4 +1,4 @@
-import { LFSEncoding } from '../encoding/LFSEncoding';
+import { LFSEncoding } from '../LFSEncoding';
 
 export class PacketReader {
   public offset = 0;
