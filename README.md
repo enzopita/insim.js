@@ -1,158 +1,69 @@
-# InSim.js
+<div align="center">
+  <img src="https://i.imgur.com/x9pCebF.png" width="25%">
+  <br><br>
+  <p>
+    <a href="https://npmjs.com/package/insim.js">
+      <img src="https://badgen.net/npm/v/insim.js">
+      <img src="https://badgen.net/bundlephobia/min/insim.js">
+    </a>
+  </p>
+</div>
 
-A TypeScript version of the [InSim.NET](https://github.com/alexmcbride/insimdotnet) library
+This library is under constant development and provides the basic functionality for creating your InSim. If you run into any problems or have any suggestions, please create a new issue.
 
 ## Installing
 
+It is advisable to always use the latest version of [Node](https://nodejs.org) when possible, this library has been tested with version 16.9.0 and does not guarantee functionality with earlier versions.
+
 ```bash
+$ npm install insim.js
 $ yarn add insim.js
 ```
 
-## Example
-```typescript
-import { InSim, PacketType } from 'insim.js';
+## Getting started
+
+To make good use of this library, basic knowledge about InSim is required. You can read in the [Live for Speed manual](https://en.lfsmanual.net/wiki/InSim#InSim_Reference) what packages exist and their functionality.
+
+```javascript
+const { InSim, PacketType } = require('insim.js');
 
 const insim = new InSim({
   connection: {
-    host: '127.0.0.1',
-    port: 29999,
+    host: '127.0.0.1', // DCon host
+    port: 29999, // DCon InSim port
   },
 
   insimOptions: {
-    name: 'InSim.js',
-    prefix: '!',
-  },
+    name: 'InSim.js', // Your InSim name
+    adminPassword: '', // DCon admin password
+  }
 });
 
+// It's recommended to always handle errors.
 insim.on('error', error => {
   console.log('Error', error);
 });
 
-insim.bind<IS_MSO>(PacketType.ISP_MSO, (data) => {
-  console.log('Chat message', data);
+insim.on('disconnect', () => {
+  console.log('InSim disconnected');
+});
+
+insim.bind(PacketType.ISP_VER, (data) => {
+  console.log('InSim connected', data);
 });
 
 insim.connect();
 ```
 
+## Useful links
+
+- [InSim.js documentation](https://enzopita.github.io/insim.js)
+- [Live for Speed Manual](https://en.lfsmanual.net/wiki/InSim)
+
 ## Coverage
 
-The InSim.js library is under development, so it does not have full functionality compared to stable libraries published over a much longer period of time.
+All of InSim's features are not implemented yet, but you can follow the progress by clicking [here](COVERAGE).
 
-### Flags
-- [x] PacketType
-- [x] PassengerFlags
-- [x] PitWorkFlags
-- [x] PlayerFlags
-- [x] PlayerTypes
-- [x] PMOFlags
-- [x] RaceFlags
-- [x] ReplayOptions
-- [x] UserType
-- [x] ObjectFlags
-- [x] InSimFlags
-- [x] HostFlags
-- [x] HlvcFlags
-- [x] ContactFlags
-- [x] ConfirmationFlags
-- [x] CompCarFlags
-- [x] ClickFlags
-- [x] CharacterModifiers
-- [x] CarFlags
-- [x] ButtonStyles
-- [x] BulbInfo
-- [x] ActionFlags
-- [x] OutGaugeFlags
-- [x] DashLightFlags
-- [x] StateFlags
-- [x] MessageSound
+## License
 
-### Packets
-
-We have a total of 26/64 packages to be implemented. You will have an overview of their implementation in the library below.
-
-- [ ] IS_ACR
-- [ ] IS_AXI
-- [ ] IS_AXM
-- [ ] IS_AXO
-- [x] IS_BFN
-- [x] IS_BTC
-- [x] IS_BTN
-- [x] IS_BTT
-- [ ] IS_CCH
-- [ ] IS_CIM
-- [x] IS_CNL
-- [x] IS_CON
-- [ ] IS_CPP
-- [x] IS_CPR
-- [ ] IS_CRS
-- [ ] IS_CSC
-- [ ] IS_FIN
-- [ ] IS_FLG
-- [ ] IS_HCP
-- [ ] IS_HLV
-- [ ] IS_III
-- [x] IS_ISI
-- [x] IS_ISM
-- [x] IS_JRR
-- [ ] IS_LAP
-- [x] IS_MCI
-- [ ] IS_MOD
-- [ ] IS_MSL
-- [x] IS_MSO
-- [x] IS_MST
-- [x] IS_MSX
-- [x] IS_MTC
-- [x] IS_NCI
-- [x] IS_NCN
-- [ ] IS_NLP
-- [x] IS_NPL
-- [x] IS_OBH
-- [x] IS_OCO
-- [ ] IS_PEN
-- [ ] IS_PFL
-- [ ] IS_PIT
-- [ ] IS_PLA
-- [x] IS_PLC
-- [x] IS_PLL
-- [x] IS_PLP
-- [ ] IS_PSF
-- [ ] IS_REO
-- [ ] IS_RES
-- [ ] IS_RIP
-- [ ] IS_RST
-- [ ] IS_SCC
-- [ ] IS_SCH
-- [ ] IS_SFP
-- [ ] IS_SLC
-- [ ] IS_SMALL
-- [ ] IS_SPX
-- [ ] IS_SSH
-- [ ] IS_STA
-- [x] IS_TINY
-- [ ] IS_TOC
-- [ ] IS_TTC
-- [x] IS_UCO
-- [x] IS_VER
-- [ ] IS_VTN
-
-### InSim Relay
-
-- [ ] IR_ARP
-- [ ] IR_ARQ
-- [ ] IR_ERR
-- [ ] IR_HLR
-- [ ] IR_HOS
-- [ ] IR_SEL
-
-### Sockets
-- [x] TcpSocket
-- [ ] UdpSocket
-
-### Logic
-- [x] PacketWriter
-- [x] PacketReader
-
-## LICENSE
-
-This project is licensed under GPLv3
+License information can be found in the [LICENSE](LICENSE) file.
