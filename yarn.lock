@@ -2700,11 +2700,6 @@ typedoc-default-themes@^0.12.10:
   resolved "https://registry.yarnpkg.com/typedoc-default-themes/-/typedoc-default-themes-0.12.10.tgz#614c4222fe642657f37693ea62cad4dafeddf843"
   integrity sha512-fIS001cAYHkyQPidWXmHuhs8usjP5XVJjWB8oZGqkTowZaz3v7g3KDZeeqE82FBrmkAnIBOY3jgy7lnPnqATbA==
 
-typedoc-theme-slick-dark@^1.0.4:
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/typedoc-theme-slick-dark/-/typedoc-theme-slick-dark-1.0.4.tgz#88aaa38f36cb220385c53901ce9e9541d4d5ba3b"
-  integrity sha512-lE0VjTi3nu0HTNRJTAmUmGB7ih3QSgaPpciBRtfj5XZRb2lii7REeFhmogXhXQd4Ou4vbgs+4PL77O8apmDnFw==
-
 typedoc@^0.21.9:
   version "0.21.9"
   resolved "https://registry.yarnpkg.com/typedoc/-/typedoc-0.21.9.tgz#6fbdc7152024a00f03af53a0ca40f44e91f0f129"
