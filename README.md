@@ -1,6 +1,5 @@
-<div align="center">
-  <img src="https://i.imgur.com/x9pCebF.png" width="25%">
-  <br><br>
+<div>
+  <h1>InSim.js</h1>
   <p>
     <a href="https://npmjs.com/package/insim.js">
       <img src="https://badgen.net/npm/v/insim.js">
@@ -28,15 +27,11 @@ To make good use of this library, basic knowledge about InSim is required. You c
 const { InSim, PacketType } = require('insim.js');
 
 const insim = new InSim({
-  connection: {
-    host: '127.0.0.1', // DCon host
-    port: 29999, // DCon InSim port
-  },
+  host: '127.0.0.1', // DCon host
+  port: 29999, // DCon InSim port
 
-  insimOptions: {
-    name: 'InSim.js', // Your InSim name
-    adminPassword: '', // DCon admin password
-  }
+  name: 'InSim.js', // Your InSim name
+  password: '', // DCon admin password
 });
 
 // It's recommended to always handle errors.
@@ -46,10 +41,6 @@ insim.on('error', error => {
 
 insim.on('disconnect', () => {
   console.log('InSim disconnected');
-});
-
-insim.bind(PacketType.ISP_VER, (data) => {
-  console.log('InSim connected', data);
 });
 
 insim.connect();
@@ -62,7 +53,7 @@ insim.connect();
 
 ## Coverage
 
-All of InSim's features are not implemented yet, but you can follow the progress by clicking [here](COVERAGE).
+All of InSim's features are not implemented yet, but you can follow the progress by clicking [here](COVERAGE.md).
 
 ## License
 
