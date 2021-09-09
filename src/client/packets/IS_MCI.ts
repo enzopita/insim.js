@@ -1,9 +1,9 @@
 import { CompCar } from '../../structures/CompCar';
-import { IDeserializable, Packet } from '../../structures/Packet';
+import { Packet } from '../../structures/Packet';
 import { PacketType } from '../../types/PacketType';
 import { PacketReader } from '../../utils/packets/PacketReader';
 
-export class IS_MCI extends Packet implements IDeserializable {
+export class IS_MCI extends Packet {
   public type = PacketType.ISP_MCI;
   public size = 28;
 

@@ -1,10 +1,10 @@
-import { IDeserializable, Packet } from '../../structures/Packet';
+import { Packet } from '../../structures/Packet';
 import { LFSLanguage } from '../../types/LFSLanguage';
 import { PacketType } from '../../types/PacketType';
 import { IPAddress } from '../../utils/IPAddress';
 import { PacketReader } from '../../utils/packets/PacketReader';
 
-export class IS_NCI extends Packet implements IDeserializable {
+export class IS_NCI extends Packet {
   public type = PacketType.ISP_NCI;
   public size = 16;
 

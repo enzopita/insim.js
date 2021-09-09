@@ -1,5 +1,4 @@
-import { Client } from './client/Client';
-export { Client as InSim };
+export * from './client/InSim';
 
 export * from './structures/BaseSocket';
 export * from './structures/CarContact';
@@ -11,8 +10,9 @@ export * from './structures/ObjectInfo';
 export * from './structures/Packet';
 export * from './structures/Tyres';
 
+export * from './utils/Util';
 export * from './utils/IPAddress';
-export * from './utils/encoding/LFSEncoding';
+export * from './utils/LFSEncoding';
 
 export * from './utils/packets/PacketReader';
 export * from './utils/packets/PacketWriter';

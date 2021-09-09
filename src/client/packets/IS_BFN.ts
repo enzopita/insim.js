@@ -1,13 +1,9 @@
-import {
-  IPacketOptionalOptions,
-  ISerializable,
-  Packet,
-} from '../../structures/Packet';
+import { Packet, PacketOptionalOptions } from '../../structures/Packet';
 import { ButtonFunction } from '../../types/ButtonFunction';
 import { PacketType } from '../../types/PacketType';
 import { PacketWriter } from '../../utils/packets/PacketWriter';
 
-export class IS_BFN extends Packet implements ISerializable {
+export class IS_BFN extends Packet {
   public type = PacketType.ISP_BFN;
   public size = 8;
 
@@ -37,7 +33,4 @@ export class IS_BFN extends Packet implements ISerializable {
   }
 }
 
-export type IsBfnOptions = IPacketOptionalOptions<
-  IS_BFN,
-  'clickMax' | 'subType' | 'inst'
->;
+export type IsBfnOptions = PacketOptionalOptions<IS_BFN, 'clickMax' | 'subType' | 'inst'>;

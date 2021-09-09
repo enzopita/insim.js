@@ -1,10 +1,10 @@
 import { CarContOBJ } from '../../structures/CarContOBJ';
-import { Packet, IDeserializable } from '../../structures/Packet';
+import { Packet } from '../../structures/Packet';
 import { ObjectFlags } from '../../types/ObjectFlags';
 import { PacketType } from '../../types/PacketType';
 import { PacketReader } from '../../utils/packets/PacketReader';
 
-export class IS_OBH extends Packet implements IDeserializable {
+export class IS_OBH extends Packet {
   public type = PacketType.ISP_NONE;
   public size = 0;
 

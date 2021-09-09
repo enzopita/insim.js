@@ -1,4 +1,4 @@
-import { Packet, IDeserializable } from '../../structures/Packet';
+import { Packet } from '../../structures/Packet';
 import { Tyres } from '../../structures/Tyres';
 import { PacketType } from '../../types/PacketType';
 import { PassengerFlags } from '../../types/PassengerFlags';
@@ -7,7 +7,7 @@ import { PlayerTypes } from '../../types/PlayerTypes';
 import { SetupFlags } from '../../types/SetupFlags';
 import { PacketReader } from '../../utils/packets/PacketReader';
 
-export class IS_NPL extends Packet implements IDeserializable {
+export class IS_NPL extends Packet {
   public type = PacketType.ISP_NPL;
   public size = 76;
 
@@ -55,12 +55,7 @@ export class IS_NPL extends Packet implements IDeserializable {
     this.carName = reader.readString(4);
     this.skinName = reader.readString(16);
 
-    this.tyres = new Tyres(
-      reader.readUInt8(),
-      reader.readUInt8(),
-      reader.readUInt8(),
-      reader.readUInt8(),
-    );
+    this.tyres = new Tyres(reader.readUInt8(), reader.readUInt8(), reader.readUInt8(), reader.readUInt8());
 
     this.addedMass = reader.readUInt8();
     this.intakeRestriction = reader.readUInt8();

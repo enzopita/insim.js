@@ -1,37 +1,26 @@
-import { Constants } from './Constants';
 import { PacketType } from '../types/PacketType';
-import { PacketWriter } from '../utils/packets/PacketWriter';
+import { Constants } from './Constants';
+import { InSimException } from './InSimException';
 
 export abstract class Packet {
   public type = PacketType.ISP_NONE;
   public size = 0;
-  public requestId = Constants.PACKET_REQUEST_ID;
+  public requestId = Constants.packetRequestId;
+
+  public serialize(): Buffer {
+    throw new InSimException(`${PacketType[this.type]}#serialize() is not implemented.`);
+  }
+
+  // eslint-disable-next-line
+  public deserialize(data: Buffer): unknown {
+    throw new InSimException(`${PacketType[this.type]}#deserialize() is not implemented.`);
+  }
 }
 
-export interface IPacketConstructor {
+export type PacketGenericProperties = keyof Packet;
+export type PacketOptions<T> = Omit<T, PacketGenericProperties>;
+export type PacketOptionalOptions<T, V extends keyof T> = Omit<T, V | PacketGenericProperties> | Partial<Pick<T, V>>;
+
+export interface PacketConstructor {
   new (): Packet;
 }
-
-export interface ISerializable {
-  serialize(): Buffer;
-  serialize(writer: PacketWriter): void;
-}
-
-export interface IDeserializable {
-  deserialize(buffer: Buffer): Packet;
-}
-
-export type IGenericPacketProperties =
-  | 'type'
-  | 'size'
-  | 'serialize'
-  | 'deserialize'
-  | 'requestId';
-
-export type IPacketOptions<T> =
-  | Omit<T, IGenericPacketProperties>
-  | Partial<Pick<Packet, 'requestId'>>;
-
-export type IPacketOptionalOptions<T, V extends keyof T> =
-  | Omit<T, IGenericPacketProperties | V>
-  | Partial<Pick<T, V>>;

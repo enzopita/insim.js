@@ -1,11 +1,11 @@
-import { Packet, ISerializable, IPacketOptions } from '../../structures/Packet';
+import { Packet, PacketOptions } from '../../structures/Packet';
 import { BulbInfo } from '../../types/BulbInfo';
 import { OCOAction } from '../../types/OCOAction';
 import { OCOIndex } from '../../types/OCOIndex';
 import { PacketType } from '../../types/PacketType';
 import { PacketWriter } from '../../utils/packets/PacketWriter';
 
-export class IS_OCO extends Packet implements ISerializable {
+export class IS_OCO extends Packet {
   public type = PacketType.ISP_OCO;
   public size = 8;
 
@@ -36,4 +36,4 @@ export class IS_OCO extends Packet implements ISerializable {
   }
 }
 
-export type IsOcoOptions = IPacketOptions<IS_OCO>;
+export type IsOcoOptions = PacketOptions<IS_OCO>;

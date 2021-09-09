@@ -1,10 +1,10 @@
-import { Packet, ISerializable, IPacketOptions } from '../../structures/Packet';
+import { Packet, PacketOptions } from '../../structures/Packet';
 import { ButtonStyles } from '../../types/ButtonStyles';
 import { PacketType } from '../../types/PacketType';
-import { LFSEncoding } from '../../utils/encoding/LFSEncoding';
+import { LFSEncoding } from '../../utils/LFSEncoding';
 import { PacketWriter } from '../../utils/packets/PacketWriter';
 
-export class IS_BTN extends Packet implements ISerializable {
+export class IS_BTN extends Packet {
   public type = PacketType.ISP_BTN;
   public size = 12;
 
@@ -35,8 +35,7 @@ export class IS_BTN extends Packet implements ISerializable {
 
     const textBytes = LFSEncoding.getBytes(this.text, 240);
 
-    this.size =
-      12 + Math.min(textBytes.length + (4 - (textBytes.length % 4)), 240);
+    this.size = 12 + Math.min(textBytes.length + (4 - (textBytes.length % 4)), 240);
 
     const writer = new PacketWriter(this.size);
 
@@ -60,4 +59,4 @@ export class IS_BTN extends Packet implements ISerializable {
   }
 }
 
-export type IsBtnOptions = Partial<IPacketOptions<IS_BTN>>;
+export type IsBtnOptions = Partial<PacketOptions<IS_BTN>>;

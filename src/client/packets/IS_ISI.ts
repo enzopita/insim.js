@@ -1,21 +1,21 @@
-import { IPacketOptions, ISerializable, Packet } from '../../structures/Packet';
-import { Constants } from '../../structures/Constants';
+import { Packet, PacketOptions } from '../../structures/Packet';
 import { PacketWriter } from '../../utils/packets/PacketWriter';
 import { PacketType } from '../../types/PacketType';
-import type { ClientInSimOptions } from '../Client';
+import { InSimOptions } from '../InSim';
+import { InSimFlags } from '../../types/InSimFlags';
 
-export class IS_ISI extends Packet implements ISerializable {
+export class IS_ISI extends Packet implements IsIsiOptions {
   public type = PacketType.ISP_ISI;
   public size = 44;
   public requestId = 1;
 
-  public name = Constants.INSIM_NAME;
-  public prefix = Constants.INSIM_PREFIX;
-  public version = Constants.INSIM_VERSION;
-  public password = '';
-  public flags = 0;
-  public interval = 0;
-  public udpPort = 0;
+  public name!: string;
+  public prefix!: string;
+  public version!: number;
+  public password!: string;
+  public flags!: InSimFlags;
+  public interval!: number;
+  public udpPort!: number;
 
   constructor(options: IsIsiOptions) {
     super();
@@ -44,4 +44,7 @@ export class IS_ISI extends Packet implements ISerializable {
   }
 }
 
-export type IsIsiOptions = Partial<ClientInSimOptions> & IPacketOptions<IS_ISI>;
+export type IsIsiOptions = Pick<
+  InSimOptions,
+  'udpPort' | 'flags' | 'version' | 'prefix' | 'interval' | 'password' | 'name'
+>;

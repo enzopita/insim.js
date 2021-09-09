@@ -1,11 +1,11 @@
 import { CarContOBJ } from '../../structures/CarContOBJ';
 import { ObjectInfo } from '../../structures/ObjectInfo';
-import { Packet, IDeserializable } from '../../structures/Packet';
+import { Packet } from '../../structures/Packet';
 import { PacketType } from '../../types/PacketType';
 import { UCOAction } from '../../types/UCOAction';
 import { PacketReader } from '../../utils/packets/PacketReader';
 
-export class IS_UCO extends Packet implements IDeserializable {
+export class IS_UCO extends Packet {
   public type = PacketType.ISP_UCO;
   public size = 0;
 

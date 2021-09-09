@@ -1,14 +1,10 @@
-import {
-  Packet,
-  ISerializable,
-  IPacketOptionalOptions,
-} from '../../structures/Packet';
+import { Packet, PacketOptionalOptions } from '../../structures/Packet';
 import { PacketWriter } from '../../utils/packets/PacketWriter';
 import { PacketType } from '../../types/PacketType';
 import { MessageSound } from '../../types/MessageSound';
-import { LFSEncoding } from '../../utils/encoding/LFSEncoding';
+import { LFSEncoding } from '../../utils/LFSEncoding';
 
-export class IS_MTC extends Packet implements ISerializable {
+export class IS_MTC extends Packet {
   public type = PacketType.ISP_MTC;
   public size = 8;
 
@@ -26,8 +22,7 @@ export class IS_MTC extends Packet implements ISerializable {
   public serialize(): Buffer {
     const messageBytes = LFSEncoding.getBytes(this.message, 127);
 
-    this.size =
-      8 + Math.min(messageBytes.length + (4 - (messageBytes.length % 4)), 128);
+    this.size = 8 + Math.min(messageBytes.length + (4 - (messageBytes.length % 4)), 128);
 
     const writer = new PacketWriter(this.size);
 
@@ -44,4 +39,4 @@ export class IS_MTC extends Packet implements ISerializable {
   }
 }
 
-export type IsMtcOptions = IPacketOptionalOptions<IS_MTC, 'playerId'>;
+export type IsMtcOptions = PacketOptionalOptions<IS_MTC, 'playerId'>;

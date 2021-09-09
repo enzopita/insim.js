@@ -1,9 +1,9 @@
-import { Packet, IDeserializable } from '../../structures/Packet';
+import { Packet } from '../../structures/Packet';
 import { LeaveReason } from '../../types/LeaveReason';
 import { PacketType } from '../../types/PacketType';
 import { PacketReader } from '../../utils/packets/PacketReader';
 
-export class IS_CNL extends Packet implements IDeserializable {
+export class IS_CNL extends Packet {
   public type = PacketType.ISP_CNL;
   public size = 8;
 

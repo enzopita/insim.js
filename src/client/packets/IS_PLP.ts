@@ -1,8 +1,8 @@
-import { Packet, IDeserializable } from '../../structures/Packet';
+import { Packet } from '../../structures/Packet';
 import { PacketType } from '../../types/PacketType';
 import { PacketReader } from '../../utils/packets/PacketReader';
 
-export class IS_PLP extends Packet implements IDeserializable {
+export class IS_PLP extends Packet {
   public type = PacketType.ISP_PLP;
   public size = 4;
 

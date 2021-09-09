@@ -1,15 +1,10 @@
 import { TinyType } from '../../types/TinyType';
 import { PacketType } from '../../types/PacketType';
-import {
-  Packet,
-  ISerializable,
-  IDeserializable,
-  IPacketOptions,
-} from '../../structures/Packet';
+import { Packet, PacketOptions } from '../../structures/Packet';
 import { PacketWriter } from '../../utils/packets/PacketWriter';
 import { PacketReader } from '../../utils/packets/PacketReader';
 
-export class IS_TINY extends Packet implements ISerializable, IDeserializable {
+export class IS_TINY extends Packet {
   public type = PacketType.ISP_TINY;
   public size = 4;
 
@@ -43,4 +38,4 @@ export class IS_TINY extends Packet implements ISerializable, IDeserializable {
   }
 }
 
-export type IsTinyOptions = IPacketOptions<IS_TINY>;
+export type IsTinyOptions = PacketOptions<IS_TINY>;

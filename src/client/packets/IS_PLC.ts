@@ -1,9 +1,9 @@
-import { Packet, ISerializable, IPacketOptions } from '../../structures/Packet';
+import { Packet, PacketOptions } from '../../structures/Packet';
 import { CarFlags } from '../../types/CarFlags';
 import { PacketType } from '../../types/PacketType';
 import { PacketWriter } from '../../utils/packets/PacketWriter';
 
-export class IS_PLC extends Packet implements ISerializable {
+export class IS_PLC extends Packet {
   public type = PacketType.ISP_PLC;
   public size = 12;
 
@@ -32,4 +32,4 @@ export class IS_PLC extends Packet implements ISerializable {
   }
 }
 
-export type IsPlcOptions = IPacketOptions<IS_PLC>;
+export type IsPlcOptions = PacketOptions<IS_PLC>;

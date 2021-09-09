@@ -1,9 +1,9 @@
 import { PacketReader } from '../../utils/packets/PacketReader';
-import { Packet, IDeserializable } from '../../structures/Packet';
+import { Packet } from '../../structures/Packet';
 import { PacketType } from '../../types/PacketType';
 import { HostType } from '../../types/HostType';
 
-export class IS_ISM extends Packet implements IDeserializable {
+export class IS_ISM extends Packet {
   public type = PacketType.ISP_ISM;
   public size = 40;
 

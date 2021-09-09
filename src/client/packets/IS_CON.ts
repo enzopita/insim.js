@@ -1,9 +1,9 @@
 import { CarContact } from '../../structures/CarContact';
-import { Packet, IDeserializable } from '../../structures/Packet';
+import { Packet } from '../../structures/Packet';
 import { PacketType } from '../../types/PacketType';
 import { PacketReader } from '../../utils/packets/PacketReader';
 
-export class IS_CON extends Packet implements IDeserializable {
+export class IS_CON extends Packet {
   public type = PacketType.ISP_CON;
   public size = 40;
 

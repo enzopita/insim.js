@@ -1,8 +1,8 @@
-import { IDeserializable, Packet } from '../../structures/Packet';
+import { Packet } from '../../structures/Packet';
 import { PacketType } from '../../types/PacketType';
 import { PacketReader } from '../../utils/packets/PacketReader';
 
-export class IS_NCN extends Packet implements IDeserializable {
+export class IS_NCN extends Packet {
   public type = PacketType.ISP_NCN;
   public size = 56;
 

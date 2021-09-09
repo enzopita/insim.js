@@ -1,11 +1,11 @@
-import { Packet, IDeserializable } from '../../structures/Packet';
+import { Packet } from '../../structures/Packet';
 import { PacketType } from '../../types/PacketType';
 import { UserType } from '../../types/UserType';
 import { PacketReader } from '../../utils/packets/PacketReader';
 
 const DEFAULT_SIZE = 8;
 
-export class IS_MSO extends Packet implements IDeserializable {
+export class IS_MSO extends Packet {
   public type = PacketType.ISP_MSO;
   public size = DEFAULT_SIZE;
 
@@ -34,8 +34,7 @@ export class IS_MSO extends Packet implements IDeserializable {
       const playerName = reader.readString(this.textStart);
 
       this.textStart = playerName.length;
-      this.message =
-        playerName + reader.readString(messageLength - this.textStart);
+      this.message = playerName + reader.readString(messageLength - this.textStart);
     } else {
       this.message = reader.readString(messageLength);
     }

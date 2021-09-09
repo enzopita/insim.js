@@ -1,8 +1,8 @@
-import { Packet, ISerializable, IPacketOptions } from '../../structures/Packet';
+import { Packet, PacketOptions } from '../../structures/Packet';
 import { PacketType } from '../../types/PacketType';
 import { PacketWriter } from '../../utils/packets/PacketWriter';
 
-export class IS_MST extends Packet implements ISerializable {
+export class IS_MST extends Packet {
   public type = PacketType.ISP_MST;
   public size = 68;
 
@@ -27,4 +27,4 @@ export class IS_MST extends Packet implements ISerializable {
   }
 }
 
-export type IsMstOptions = IPacketOptions<IS_MST>;
+export type IsMstOptions = PacketOptions<IS_MST>;

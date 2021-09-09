@@ -1,10 +1,10 @@
 import { ObjectInfo } from '../../structures/ObjectInfo';
-import { Packet, ISerializable, IPacketOptions } from '../../structures/Packet';
+import { Packet, PacketOptions } from '../../structures/Packet';
 import { JRRAction } from '../../types/JRRAction';
 import { PacketType } from '../../types/PacketType';
 import { PacketWriter } from '../../utils/packets/PacketWriter';
 
-export class IS_JRR extends Packet implements ISerializable {
+export class IS_JRR extends Packet {
   public type = PacketType.ISP_JRR;
   public size = 16;
 
@@ -13,11 +13,11 @@ export class IS_JRR extends Packet implements ISerializable {
   public jrrAction!: JRRAction;
   public startPos!: ObjectInfo;
 
-  constructor(options: IsJrrOptions = {}) {
+  constructor(options: IsJrrOptions) {
     super();
     Object.assign(this, options);
 
-    if (!('startPos' in options)) this.startPos = new ObjectInfo();
+    if (!options || !('startPos' in options)) this.startPos = new ObjectInfo();
   }
 
   public serialize(): Buffer {
@@ -36,4 +36,4 @@ export class IS_JRR extends Packet implements ISerializable {
   }
 }
 
-export type IsJrrOptions = IPacketOptions<IS_JRR>;
+export type IsJrrOptions = Omit<PacketOptions<IS_JRR>, 'startPos'> | Partial<Pick<IS_JRR, 'startPos'>>;

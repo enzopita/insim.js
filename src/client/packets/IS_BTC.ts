@@ -1,9 +1,9 @@
-import { IDeserializable, Packet } from '../../structures/Packet';
+import { Packet } from '../../structures/Packet';
 import { ClickFlags } from '../../types/ClickFlags';
 import { PacketType } from '../../types/PacketType';
 import { PacketReader } from '../../utils/packets/PacketReader';
 
-export class IS_BTC extends Packet implements IDeserializable {
+export class IS_BTC extends Packet {
   public type = PacketType.ISP_BTC;
   public size = 8;
 
