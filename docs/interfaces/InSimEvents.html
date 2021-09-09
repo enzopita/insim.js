@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>ObjectFlags | insim.js</title>
+	<title>InSimEvents | insim.js</title>
 	<meta name="description" content="Documentation for insim.js">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -55,100 +55,115 @@
 					<a href="../modules.html">insim.js</a>
 				</li>
 				<li>
-					<a href="ObjectFlags.html">ObjectFlags</a>
+					<a href="InSimEvents.html">InSimEvents</a>
 				</li>
 			</ul>
-			<h1>Enumeration ObjectFlags</h1>
+			<h1>Interface InSimEvents</h1>
 		</div>
 	</div>
 </header>
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
-			<section class="tsd-panel tsd-comment">
-				<div class="tsd-comment tsd-typography">
-					<div class="lead">
-						<p>Represents the <see cref="IS_OBH"/> OBHFlags.</p>
-					</div>
-				</div>
+			<section class="tsd-panel tsd-hierarchy">
+				<h3>Hierarchy</h3>
+				<ul class="tsd-hierarchy">
+					<li>
+						<span class="target">InSimEvents</span>
+					</li>
+				</ul>
 			</section>
 			<section class="tsd-panel-group tsd-index-group">
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
 						<section class="tsd-index-section ">
-							<h3>Enumeration members</h3>
+							<h3>Methods</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="ObjectFlags.html#OBH_CAN_MOVE" class="tsd-kind-icon">OBH_<wbr>CAN_<wbr>MOVE</a></li>
-								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="ObjectFlags.html#OBH_LAYOUT" class="tsd-kind-icon">OBH_<wbr>LAYOUT</a></li>
-								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="ObjectFlags.html#OBH_ON_SPOT" class="tsd-kind-icon">OBH_<wbr>ON_<wbr>SPOT</a></li>
-								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="ObjectFlags.html#OBH_WAS_MOVING" class="tsd-kind-icon">OBH_<wbr>WAS_<wbr>MOVING</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="InSimEvents.html#connect" class="tsd-kind-icon">connect</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="InSimEvents.html#disconnect" class="tsd-kind-icon">disconnect</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="InSimEvents.html#error" class="tsd-kind-icon">error</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="InSimEvents.html#ready" class="tsd-kind-icon">ready</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Enumeration members</h2>
-				<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
-					<a name="OBH_CAN_MOVE" class="tsd-anchor"></a>
-					<h3>OBH_<wbr>CAN_<wbr>MOVE</h3>
-					<div class="tsd-signature tsd-kind-icon">OBH_<wbr>CAN_<wbr>MOVE<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> = 2</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/enzopita/insim.js/blob/e9df664/src/types/ObjectFlags.ts#L13">src/types/ObjectFlags.ts:13</a></li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>A movable object.</p>
-						</div>
-					</div>
+				<h2>Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface">
+					<a name="connect" class="tsd-anchor"></a>
+					<h3>connect</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+						<li class="tsd-signature tsd-kind-icon">connect<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in src/client/InSim.ts:33</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
-					<a name="OBH_LAYOUT" class="tsd-anchor"></a>
-					<h3>OBH_<wbr>LAYOUT</h3>
-					<div class="tsd-signature tsd-kind-icon">OBH_<wbr>LAYOUT<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> = 1</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/enzopita/insim.js/blob/e9df664/src/types/ObjectFlags.ts#L8">src/types/ObjectFlags.ts:8</a></li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>An added object.</p>
-						</div>
-					</div>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface">
+					<a name="disconnect" class="tsd-anchor"></a>
+					<h3>disconnect</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+						<li class="tsd-signature tsd-kind-icon">disconnect<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in src/client/InSim.ts:34</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
-					<a name="OBH_ON_SPOT" class="tsd-anchor"></a>
-					<h3>OBH_<wbr>ON_<wbr>SPOT</h3>
-					<div class="tsd-signature tsd-kind-icon">OBH_<wbr>ON_<wbr>SPOT<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> = 8</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/enzopita/insim.js/blob/e9df664/src/types/ObjectFlags.ts#L23">src/types/ObjectFlags.ts:23</a></li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>Object in original position.</p>
-						</div>
-					</div>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface">
+					<a name="error" class="tsd-anchor"></a>
+					<h3>error</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+						<li class="tsd-signature tsd-kind-icon">error<span class="tsd-signature-symbol">(</span>error<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Error</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in src/client/InSim.ts:32</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>error: <span class="tsd-signature-type">Error</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
-					<a name="OBH_WAS_MOVING" class="tsd-anchor"></a>
-					<h3>OBH_<wbr>WAS_<wbr>MOVING</h3>
-					<div class="tsd-signature tsd-kind-icon">OBH_<wbr>WAS_<wbr>MOVING<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> = 4</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/enzopita/insim.js/blob/e9df664/src/types/ObjectFlags.ts#L18">src/types/ObjectFlags.ts:18</a></li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>Was moving before this hit.</p>
-						</div>
-					</div>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface">
+					<a name="ready" class="tsd-anchor"></a>
+					<h3>ready</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+						<li class="tsd-signature tsd-kind-icon">ready<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in src/client/InSim.ts:35</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
 				</section>
 			</section>
 		</div>
@@ -164,20 +179,20 @@
 				<ul class="before-current">
 				</ul>
 				<ul class="current">
-					<li class="current tsd-kind-enum">
-						<a href="ObjectFlags.html" class="tsd-kind-icon">Object<wbr>Flags</a>
+					<li class="current tsd-kind-interface">
+						<a href="InSimEvents.html" class="tsd-kind-icon">In<wbr>Sim<wbr>Events</a>
 						<ul>
-							<li class=" tsd-kind-enum-member tsd-parent-kind-enum">
-								<a href="ObjectFlags.html#OBH_CAN_MOVE" class="tsd-kind-icon">OBH_<wbr>CAN_<wbr>MOVE</a>
+							<li class=" tsd-kind-method tsd-parent-kind-interface">
+								<a href="InSimEvents.html#connect" class="tsd-kind-icon">connect</a>
 							</li>
-							<li class=" tsd-kind-enum-member tsd-parent-kind-enum">
-								<a href="ObjectFlags.html#OBH_LAYOUT" class="tsd-kind-icon">OBH_<wbr>LAYOUT</a>
+							<li class=" tsd-kind-method tsd-parent-kind-interface">
+								<a href="InSimEvents.html#disconnect" class="tsd-kind-icon">disconnect</a>
 							</li>
-							<li class=" tsd-kind-enum-member tsd-parent-kind-enum">
-								<a href="ObjectFlags.html#OBH_ON_SPOT" class="tsd-kind-icon">OBH_<wbr>ON_<wbr>SPOT</a>
+							<li class=" tsd-kind-method tsd-parent-kind-interface">
+								<a href="InSimEvents.html#error" class="tsd-kind-icon">error</a>
 							</li>
-							<li class=" tsd-kind-enum-member tsd-parent-kind-enum">
-								<a href="ObjectFlags.html#OBH_WAS_MOVING" class="tsd-kind-icon">OBH_<wbr>WAS_<wbr>MOVING</a>
+							<li class=" tsd-kind-method tsd-parent-kind-interface">
+								<a href="InSimEvents.html#ready" class="tsd-kind-icon">ready</a>
 							</li>
 						</ul>
 					</li>

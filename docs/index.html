@@ -58,176 +58,63 @@
 	<div class="row">
 		<div class="col-8 col-content">
 			<div class="tsd-panel tsd-typography">
-				<a href="#insimjs" id="insimjs" style="color: inherit; text-decoration: none;">
+				<div>
 					<h1>InSim.js</h1>
-				</a>
-				<p>A TypeScript version of the <a href="https://github.com/alexmcbride/insimdotnet">InSim.NET</a> library</p>
+					<p>
+						<a href="https://npmjs.com/package/insim.js">
+							<img src="https://badgen.net/npm/v/insim.js">
+							<img src="https://badgen.net/bundlephobia/min/insim.js">
+						</a>
+					</p>
+				</div>
+				<p>This library is under constant development and provides the basic functionality for creating your InSim. If you run into any problems or have any suggestions, please create a new issue.</p>
 				<a href="#installing" id="installing" style="color: inherit; text-decoration: none;">
 					<h2>Installing</h2>
 				</a>
-				<pre><code class="language-bash"><span style="color: #000000">$ yarn add insim.js</span>
+				<p>It is advisable to always use the latest version of <a href="https://nodejs.org">Node</a> when possible, this library has been tested with version 16.9.0 and does not guarantee functionality with earlier versions.</p>
+				<pre><code class="language-bash"><span style="color: #000000">$ npm install insim.js</span>
+<span style="color: #000000">$ yarn add insim.js</span>
 </code></pre>
-				<a href="#example" id="example" style="color: inherit; text-decoration: none;">
-					<h2>Example</h2>
+				<a href="#getting-started" id="getting-started" style="color: inherit; text-decoration: none;">
+					<h2>Getting started</h2>
 				</a>
-				<pre><code class="language-typescript"><span style="color: #AF00DB">import</span><span style="color: #000000"> { </span><span style="color: #001080">InSim</span><span style="color: #000000">, </span><span style="color: #001080">PacketType</span><span style="color: #000000"> } </span><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;insim.js&#039;</span><span style="color: #000000">;</span>
+				<p>To make good use of this library, basic knowledge about InSim is required. You can read in the <a href="https://en.lfsmanual.net/wiki/InSim#InSim_Reference">Live for Speed manual</a> what packages exist and their functionality.</p>
+				<pre><code class="language-javascript"><span style="color: #0000FF">const</span><span style="color: #000000"> { </span><span style="color: #0070C1">InSim</span><span style="color: #000000">, </span><span style="color: #0070C1">PacketType</span><span style="color: #000000"> } = </span><span style="color: #795E26">require</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;insim.js&#039;</span><span style="color: #000000">);</span>
 
 <span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">insim</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">InSim</span><span style="color: #000000">({</span>
-<span style="color: #000000">  </span><span style="color: #001080">connection:</span><span style="color: #000000"> {</span>
-<span style="color: #000000">    </span><span style="color: #001080">host:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;127.0.0.1&#039;</span><span style="color: #000000">,</span>
-<span style="color: #000000">    </span><span style="color: #001080">port:</span><span style="color: #000000"> </span><span style="color: #098658">29999</span><span style="color: #000000">,</span>
-<span style="color: #000000">  },</span>
+<span style="color: #000000">  </span><span style="color: #001080">host:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;127.0.0.1&#039;</span><span style="color: #000000">, </span><span style="color: #008000">// DCon host</span>
+<span style="color: #000000">  </span><span style="color: #001080">port:</span><span style="color: #000000"> </span><span style="color: #098658">29999</span><span style="color: #000000">, </span><span style="color: #008000">// DCon InSim port</span>
 
-<span style="color: #000000">  </span><span style="color: #001080">insimOptions:</span><span style="color: #000000"> {</span>
-<span style="color: #000000">    </span><span style="color: #001080">name:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;InSim.js&#039;</span><span style="color: #000000">,</span>
-<span style="color: #000000">    </span><span style="color: #001080">prefix:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;!&#039;</span><span style="color: #000000">,</span>
-<span style="color: #000000">  },</span>
+<span style="color: #000000">  </span><span style="color: #001080">name:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;InSim.js&#039;</span><span style="color: #000000">, </span><span style="color: #008000">// Your InSim name</span>
+<span style="color: #000000">  </span><span style="color: #001080">password:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;&#039;</span><span style="color: #000000">, </span><span style="color: #008000">// DCon admin password</span>
 <span style="color: #000000">});</span>
 
+<span style="color: #008000">// It&#039;s recommended to always handle errors.</span>
 <span style="color: #001080">insim</span><span style="color: #000000">.</span><span style="color: #795E26">on</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;error&#039;</span><span style="color: #000000">, </span><span style="color: #001080">error</span><span style="color: #000000"> </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> {</span>
 <span style="color: #000000">  </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;Error&#039;</span><span style="color: #000000">, </span><span style="color: #001080">error</span><span style="color: #000000">);</span>
 <span style="color: #000000">});</span>
 
-<span style="color: #001080">insim</span><span style="color: #000000">.</span><span style="color: #795E26">bind</span><span style="color: #000000">&lt;</span><span style="color: #267F99">IS_MSO</span><span style="color: #000000">&gt;(</span><span style="color: #001080">PacketType</span><span style="color: #000000">.</span><span style="color: #0070C1">ISP_MSO</span><span style="color: #000000">, (</span><span style="color: #001080">data</span><span style="color: #000000">) </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> {</span>
-<span style="color: #000000">  </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;Chat message&#039;</span><span style="color: #000000">, </span><span style="color: #001080">data</span><span style="color: #000000">);</span>
+<span style="color: #001080">insim</span><span style="color: #000000">.</span><span style="color: #795E26">on</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;disconnect&#039;</span><span style="color: #000000">, () </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> {</span>
+<span style="color: #000000">  </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;InSim disconnected&#039;</span><span style="color: #000000">);</span>
 <span style="color: #000000">});</span>
 
 <span style="color: #001080">insim</span><span style="color: #000000">.</span><span style="color: #795E26">connect</span><span style="color: #000000">();</span>
 </code></pre>
+				<a href="#useful-links" id="useful-links" style="color: inherit; text-decoration: none;">
+					<h2>Useful links</h2>
+				</a>
+				<ul>
+					<li><a href="https://enzopita.github.io/insim.js">InSim.js documentation</a></li>
+					<li><a href="https://en.lfsmanual.net/wiki/InSim">Live for Speed Manual</a></li>
+				</ul>
 				<a href="#coverage" id="coverage" style="color: inherit; text-decoration: none;">
 					<h2>Coverage</h2>
 				</a>
-				<p>The InSim.js library is under development, so it does not have full functionality compared to stable libraries published over a much longer period of time.</p>
-				<a href="#flags" id="flags" style="color: inherit; text-decoration: none;">
-					<h3>Flags</h3>
-				</a>
-				<ul>
-					<li><input checked="" disabled="" type="checkbox"> PacketType</li>
-					<li><input checked="" disabled="" type="checkbox"> PassengerFlags</li>
-					<li><input checked="" disabled="" type="checkbox"> PitWorkFlags</li>
-					<li><input checked="" disabled="" type="checkbox"> PlayerFlags</li>
-					<li><input checked="" disabled="" type="checkbox"> PlayerTypes</li>
-					<li><input checked="" disabled="" type="checkbox"> PMOFlags</li>
-					<li><input checked="" disabled="" type="checkbox"> RaceFlags</li>
-					<li><input checked="" disabled="" type="checkbox"> ReplayOptions</li>
-					<li><input checked="" disabled="" type="checkbox"> UserType</li>
-					<li><input checked="" disabled="" type="checkbox"> ObjectFlags</li>
-					<li><input checked="" disabled="" type="checkbox"> InSimFlags</li>
-					<li><input checked="" disabled="" type="checkbox"> HostFlags</li>
-					<li><input checked="" disabled="" type="checkbox"> HlvcFlags</li>
-					<li><input checked="" disabled="" type="checkbox"> ContactFlags</li>
-					<li><input checked="" disabled="" type="checkbox"> ConfirmationFlags</li>
-					<li><input checked="" disabled="" type="checkbox"> CompCarFlags</li>
-					<li><input checked="" disabled="" type="checkbox"> ClickFlags</li>
-					<li><input checked="" disabled="" type="checkbox"> CharacterModifiers</li>
-					<li><input checked="" disabled="" type="checkbox"> CarFlags</li>
-					<li><input checked="" disabled="" type="checkbox"> ButtonStyles</li>
-					<li><input checked="" disabled="" type="checkbox"> BulbInfo</li>
-					<li><input checked="" disabled="" type="checkbox"> ActionFlags</li>
-					<li><input checked="" disabled="" type="checkbox"> OutGaugeFlags</li>
-					<li><input checked="" disabled="" type="checkbox"> DashLightFlags</li>
-					<li><input checked="" disabled="" type="checkbox"> StateFlags</li>
-					<li><input checked="" disabled="" type="checkbox"> MessageSound</li>
-				</ul>
-				<a href="#packets" id="packets" style="color: inherit; text-decoration: none;">
-					<h3>Packets</h3>
-				</a>
-				<p>We have a total of 26/64 packages to be implemented. You will have an overview of their implementation in the library below.</p>
-				<ul>
-					<li><input disabled="" type="checkbox"> IS_ACR</li>
-					<li><input disabled="" type="checkbox"> IS_AXI</li>
-					<li><input disabled="" type="checkbox"> IS_AXM</li>
-					<li><input disabled="" type="checkbox"> IS_AXO</li>
-					<li><input checked="" disabled="" type="checkbox"> IS_BFN</li>
-					<li><input checked="" disabled="" type="checkbox"> IS_BTC</li>
-					<li><input checked="" disabled="" type="checkbox"> IS_BTN</li>
-					<li><input checked="" disabled="" type="checkbox"> IS_BTT</li>
-					<li><input disabled="" type="checkbox"> IS_CCH</li>
-					<li><input disabled="" type="checkbox"> IS_CIM</li>
-					<li><input checked="" disabled="" type="checkbox"> IS_CNL</li>
-					<li><input checked="" disabled="" type="checkbox"> IS_CON</li>
-					<li><input disabled="" type="checkbox"> IS_CPP</li>
-					<li><input checked="" disabled="" type="checkbox"> IS_CPR</li>
-					<li><input disabled="" type="checkbox"> IS_CRS</li>
-					<li><input disabled="" type="checkbox"> IS_CSC</li>
-					<li><input disabled="" type="checkbox"> IS_FIN</li>
-					<li><input disabled="" type="checkbox"> IS_FLG</li>
-					<li><input disabled="" type="checkbox"> IS_HCP</li>
-					<li><input disabled="" type="checkbox"> IS_HLV</li>
-					<li><input disabled="" type="checkbox"> IS_III</li>
-					<li><input checked="" disabled="" type="checkbox"> IS_ISI</li>
-					<li><input checked="" disabled="" type="checkbox"> IS_ISM</li>
-					<li><input checked="" disabled="" type="checkbox"> IS_JRR</li>
-					<li><input disabled="" type="checkbox"> IS_LAP</li>
-					<li><input checked="" disabled="" type="checkbox"> IS_MCI</li>
-					<li><input disabled="" type="checkbox"> IS_MOD</li>
-					<li><input disabled="" type="checkbox"> IS_MSL</li>
-					<li><input checked="" disabled="" type="checkbox"> IS_MSO</li>
-					<li><input checked="" disabled="" type="checkbox"> IS_MST</li>
-					<li><input checked="" disabled="" type="checkbox"> IS_MSX</li>
-					<li><input checked="" disabled="" type="checkbox"> IS_MTC</li>
-					<li><input checked="" disabled="" type="checkbox"> IS_NCI</li>
-					<li><input checked="" disabled="" type="checkbox"> IS_NCN</li>
-					<li><input disabled="" type="checkbox"> IS_NLP</li>
-					<li><input checked="" disabled="" type="checkbox"> IS_NPL</li>
-					<li><input checked="" disabled="" type="checkbox"> IS_OBH</li>
-					<li><input checked="" disabled="" type="checkbox"> IS_OCO</li>
-					<li><input disabled="" type="checkbox"> IS_PEN</li>
-					<li><input disabled="" type="checkbox"> IS_PFL</li>
-					<li><input disabled="" type="checkbox"> IS_PIT</li>
-					<li><input disabled="" type="checkbox"> IS_PLA</li>
-					<li><input checked="" disabled="" type="checkbox"> IS_PLC</li>
-					<li><input checked="" disabled="" type="checkbox"> IS_PLL</li>
-					<li><input checked="" disabled="" type="checkbox"> IS_PLP</li>
-					<li><input disabled="" type="checkbox"> IS_PSF</li>
-					<li><input disabled="" type="checkbox"> IS_REO</li>
-					<li><input disabled="" type="checkbox"> IS_RES</li>
-					<li><input disabled="" type="checkbox"> IS_RIP</li>
-					<li><input disabled="" type="checkbox"> IS_RST</li>
-					<li><input disabled="" type="checkbox"> IS_SCC</li>
-					<li><input disabled="" type="checkbox"> IS_SCH</li>
-					<li><input disabled="" type="checkbox"> IS_SFP</li>
-					<li><input disabled="" type="checkbox"> IS_SLC</li>
-					<li><input disabled="" type="checkbox"> IS_SMALL</li>
-					<li><input disabled="" type="checkbox"> IS_SPX</li>
-					<li><input disabled="" type="checkbox"> IS_SSH</li>
-					<li><input disabled="" type="checkbox"> IS_STA</li>
-					<li><input checked="" disabled="" type="checkbox"> IS_TINY</li>
-					<li><input disabled="" type="checkbox"> IS_TOC</li>
-					<li><input disabled="" type="checkbox"> IS_TTC</li>
-					<li><input checked="" disabled="" type="checkbox"> IS_UCO</li>
-					<li><input checked="" disabled="" type="checkbox"> IS_VER</li>
-					<li><input disabled="" type="checkbox"> IS_VTN</li>
-				</ul>
-				<a href="#insim-relay" id="insim-relay" style="color: inherit; text-decoration: none;">
-					<h3>InSim Relay</h3>
-				</a>
-				<ul>
-					<li><input disabled="" type="checkbox"> IR_ARP</li>
-					<li><input disabled="" type="checkbox"> IR_ARQ</li>
-					<li><input disabled="" type="checkbox"> IR_ERR</li>
-					<li><input disabled="" type="checkbox"> IR_HLR</li>
-					<li><input disabled="" type="checkbox"> IR_HOS</li>
-					<li><input disabled="" type="checkbox"> IR_SEL</li>
-				</ul>
-				<a href="#sockets" id="sockets" style="color: inherit; text-decoration: none;">
-					<h3>Sockets</h3>
-				</a>
-				<ul>
-					<li><input checked="" disabled="" type="checkbox"> TcpSocket</li>
-					<li><input disabled="" type="checkbox"> UdpSocket</li>
-				</ul>
-				<a href="#logic" id="logic" style="color: inherit; text-decoration: none;">
-					<h3>Logic</h3>
-				</a>
-				<ul>
-					<li><input checked="" disabled="" type="checkbox"> PacketWriter</li>
-					<li><input checked="" disabled="" type="checkbox"> PacketReader</li>
-				</ul>
+				<p>All of InSim&#39;s features are not implemented yet, but you can follow the progress by clicking <a href="COVERAGE.md">here</a>.</p>
 				<a href="#license" id="license" style="color: inherit; text-decoration: none;">
-					<h2>LICENSE</h2>
+					<h2>License</h2>
 				</a>
-				<p>This project is licensed under GPLv3</p>
+				<p>License information can be found in the <a href="LICENSE">LICENSE</a> file.</p>
 			</div>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
@@ -471,23 +358,20 @@
 					<li class=" tsd-kind-class">
 						<a href="classes/Tyres.html" class="tsd-kind-icon">Tyres</a>
 					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/IDeserializable.html" class="tsd-kind-icon">IDeserializable</a>
+					<li class=" tsd-kind-class">
+						<a href="classes/Util.html" class="tsd-kind-icon">Util</a>
 					</li>
 					<li class=" tsd-kind-interface">
-						<a href="interfaces/IPacketConstructor.html" class="tsd-kind-icon">IPacket<wbr>Constructor</a>
+						<a href="interfaces/BaseSocketEvents.html" class="tsd-kind-icon">Base<wbr>Socket<wbr>Events</a>
 					</li>
 					<li class=" tsd-kind-interface">
-						<a href="interfaces/ISerializable.html" class="tsd-kind-icon">ISerializable</a>
+						<a href="interfaces/InSimEvents.html" class="tsd-kind-icon">In<wbr>Sim<wbr>Events</a>
 					</li>
-					<li class=" tsd-kind-type-alias">
-						<a href="modules.html#IGenericPacketProperties" class="tsd-kind-icon">IGeneric<wbr>Packet<wbr>Properties</a>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/InSimOptions.html" class="tsd-kind-icon">In<wbr>Sim<wbr>Options</a>
 					</li>
-					<li class=" tsd-kind-type-alias tsd-has-type-parameter">
-						<a href="modules.html#IPacketOptionalOptions" class="tsd-kind-icon">IPacket<wbr>Optional<wbr>Options</a>
-					</li>
-					<li class=" tsd-kind-type-alias tsd-has-type-parameter">
-						<a href="modules.html#IPacketOptions" class="tsd-kind-icon">IPacket<wbr>Options</a>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/PacketConstructor.html" class="tsd-kind-icon">Packet<wbr>Constructor</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
 						<a href="modules.html#IsBfnOptions" class="tsd-kind-icon">Is<wbr>Bfn<wbr>Options</a>
@@ -522,6 +406,15 @@
 					<li class=" tsd-kind-type-alias">
 						<a href="modules.html#ObjectInfoOptions" class="tsd-kind-icon">Object<wbr>Info<wbr>Options</a>
 					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#PacketGenericProperties" class="tsd-kind-icon">Packet<wbr>Generic<wbr>Properties</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-has-type-parameter">
+						<a href="modules.html#PacketOptionalOptions" class="tsd-kind-icon">Packet<wbr>Optional<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-has-type-parameter">
+						<a href="modules.html#PacketOptions" class="tsd-kind-icon">Packet<wbr>Options</a>
+					</li>
 					<li class=" tsd-kind-variable">
 						<a href="modules.html#Constants" class="tsd-kind-icon">Constants</a>
 					</li>
@@ -535,24 +428,27 @@
 		<h2>Legend</h2>
 		<div class="tsd-legend-group">
 			<ul class="tsd-legend">
+				<li class="tsd-kind-constructor tsd-parent-kind-interface"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-interface"><span class="tsd-kind-icon">Method</span></li>
+			</ul>
+			<ul class="tsd-legend">
 				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
 				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
 				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
 			</ul>
 			<ul class="tsd-legend">
-				<li class="tsd-kind-constructor tsd-parent-kind-interface"><span class="tsd-kind-icon">Constructor</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-interface"><span class="tsd-kind-icon">Method</span></li>
-			</ul>
-			<ul class="tsd-legend">
 				<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited constructor</span></li>
 				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private method</span></li>
 			</ul>
 			<ul class="tsd-legend">
 				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static property</span></li>
 				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static method</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private method</span></li>
 			</ul>
 		</div>
 	</div>
