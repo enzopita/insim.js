@@ -27,27 +27,29 @@ To make good use of this library, basic knowledge about InSim is required. You c
 const { InSim, PacketType } = require('insim.js');
 
 const insim = new InSim({
-  host: '127.0.0.1',
-  port: 29999,
+  host: '127.0.0.1', // DCon host
+  port: 29999, // DCon port
 
-  name: 'Example 1',
-  password: 'adminPassword',
+  name: 'Example 1', // Your InSim name
+  password: 'adminPassword', // DCon admin password
 });
 
+// It's always recommended to handle errors
 insim.on('error', (error) => {
   console.log('Error', error);
 });
 
+// When the InSim connect to DCon (no warranty for operation)
 insim.on('connect', () => {
   console.log('Connected to DCon');
 });
 
+// When InSim receives the data from the DCon
 insim.on('ready', () => {
   console.log('InSim is ready');
 });
 
 insim.connect();
-
 ```
 
 ## Useful links
