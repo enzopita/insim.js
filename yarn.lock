@@ -2690,10 +2690,20 @@ type-fest@^0.8.1:
   resolved "https://registry.yarnpkg.com/type-fest/-/type-fest-0.8.1.tgz#09e249ebde851d3b1e48d27c105444667f17b83d"
   integrity sha512-4dbzIzqvjtgiM5rw1k5rEHtBANKmdudhGyBEajN01fEyhaAIhsoKNy6y7+IN93IfpFtwY9iqi7kD+xwKhQsNJA==
 
+typed-emitter@^1.3.1:
+  version "1.3.1"
+  resolved "https://registry.yarnpkg.com/typed-emitter/-/typed-emitter-1.3.1.tgz#c98d71551a99d5f08ba9085ee44b8fc9b2357502"
+  integrity sha512-2h7utWyXgd2R2u2IuL8B4yu1gqMxbgUj2VS/MGVbFhEVQNJKXoQQoS5CBMh+eW31zFeSmDfEQ3qQf4xy5SlPVQ==
+
 typedoc-default-themes@^0.12.10:
   version "0.12.10"
   resolved "https://registry.yarnpkg.com/typedoc-default-themes/-/typedoc-default-themes-0.12.10.tgz#614c4222fe642657f37693ea62cad4dafeddf843"
   integrity sha512-fIS001cAYHkyQPidWXmHuhs8usjP5XVJjWB8oZGqkTowZaz3v7g3KDZeeqE82FBrmkAnIBOY3jgy7lnPnqATbA==
+
+typedoc-theme-slick-dark@^1.0.4:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/typedoc-theme-slick-dark/-/typedoc-theme-slick-dark-1.0.4.tgz#88aaa38f36cb220385c53901ce9e9541d4d5ba3b"
+  integrity sha512-lE0VjTi3nu0HTNRJTAmUmGB7ih3QSgaPpciBRtfj5XZRb2lii7REeFhmogXhXQd4Ou4vbgs+4PL77O8apmDnFw==
 
 typedoc@^0.21.9:
   version "0.21.9"
