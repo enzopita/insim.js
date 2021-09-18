@@ -83,19 +83,25 @@
 
 <span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">insim</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">InSim</span><span style="color: #000000">({</span>
 <span style="color: #000000">  </span><span style="color: #001080">host:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;127.0.0.1&#039;</span><span style="color: #000000">, </span><span style="color: #008000">// DCon host</span>
-<span style="color: #000000">  </span><span style="color: #001080">port:</span><span style="color: #000000"> </span><span style="color: #098658">29999</span><span style="color: #000000">, </span><span style="color: #008000">// DCon InSim port</span>
+<span style="color: #000000">  </span><span style="color: #001080">port:</span><span style="color: #000000"> </span><span style="color: #098658">29999</span><span style="color: #000000">, </span><span style="color: #008000">// DCon port</span>
 
-<span style="color: #000000">  </span><span style="color: #001080">name:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;InSim.js&#039;</span><span style="color: #000000">, </span><span style="color: #008000">// Your InSim name</span>
-<span style="color: #000000">  </span><span style="color: #001080">password:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;&#039;</span><span style="color: #000000">, </span><span style="color: #008000">// DCon admin password</span>
+<span style="color: #000000">  </span><span style="color: #001080">name:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;Example 1&#039;</span><span style="color: #000000">, </span><span style="color: #008000">// Your InSim name</span>
+<span style="color: #000000">  </span><span style="color: #001080">password:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;adminPassword&#039;</span><span style="color: #000000">, </span><span style="color: #008000">// DCon admin password</span>
 <span style="color: #000000">});</span>
 
-<span style="color: #008000">// It&#039;s recommended to always handle errors.</span>
-<span style="color: #001080">insim</span><span style="color: #000000">.</span><span style="color: #795E26">on</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;error&#039;</span><span style="color: #000000">, </span><span style="color: #001080">error</span><span style="color: #000000"> </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> {</span>
+<span style="color: #008000">// It&#039;s always recommended to handle errors</span>
+<span style="color: #001080">insim</span><span style="color: #000000">.</span><span style="color: #795E26">on</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;error&#039;</span><span style="color: #000000">, (</span><span style="color: #001080">error</span><span style="color: #000000">) </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> {</span>
 <span style="color: #000000">  </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;Error&#039;</span><span style="color: #000000">, </span><span style="color: #001080">error</span><span style="color: #000000">);</span>
 <span style="color: #000000">});</span>
 
-<span style="color: #001080">insim</span><span style="color: #000000">.</span><span style="color: #795E26">on</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;disconnect&#039;</span><span style="color: #000000">, () </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> {</span>
-<span style="color: #000000">  </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;InSim disconnected&#039;</span><span style="color: #000000">);</span>
+<span style="color: #008000">// When the InSim connect to DCon (no warranty for operation)</span>
+<span style="color: #001080">insim</span><span style="color: #000000">.</span><span style="color: #795E26">on</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;connect&#039;</span><span style="color: #000000">, () </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> {</span>
+<span style="color: #000000">  </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;Connected to DCon&#039;</span><span style="color: #000000">);</span>
+<span style="color: #000000">});</span>
+
+<span style="color: #008000">// When InSim receives the data from the DCon</span>
+<span style="color: #001080">insim</span><span style="color: #000000">.</span><span style="color: #795E26">on</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;ready&#039;</span><span style="color: #000000">, () </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> {</span>
+<span style="color: #000000">  </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;InSim is ready&#039;</span><span style="color: #000000">);</span>
 <span style="color: #000000">});</span>
 
 <span style="color: #001080">insim</span><span style="color: #000000">.</span><span style="color: #795E26">connect</span><span style="color: #000000">();</span>
@@ -129,6 +135,9 @@
 				<ul class="before-current">
 					<li class=" tsd-kind-enum">
 						<a href="enums/ActionFlags.html" class="tsd-kind-icon">Action<wbr>Flags</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/AdminResult.html" class="tsd-kind-icon">Admin<wbr>Result</a>
 					</li>
 					<li class=" tsd-kind-enum">
 						<a href="enums/BulbInfo.html" class="tsd-kind-icon">Bulb<wbr>Info</a>
@@ -188,6 +197,9 @@
 						<a href="enums/MessageSound.html" class="tsd-kind-icon">Message<wbr>Sound</a>
 					</li>
 					<li class=" tsd-kind-enum">
+						<a href="enums/ModeIdentifier.html" class="tsd-kind-icon">Mode<wbr>Identifier</a>
+					</li>
+					<li class=" tsd-kind-enum">
 						<a href="enums/OCOAction.html" class="tsd-kind-icon">OCOAction</a>
 					</li>
 					<li class=" tsd-kind-enum">
@@ -207,6 +219,12 @@
 					</li>
 					<li class=" tsd-kind-enum">
 						<a href="enums/PassengerFlags.html" class="tsd-kind-icon">Passenger<wbr>Flags</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/PenaltyReason.html" class="tsd-kind-icon">Penalty<wbr>Reason</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/PenaltyValue.html" class="tsd-kind-icon">Penalty<wbr>Value</a>
 					</li>
 					<li class=" tsd-kind-enum">
 						<a href="enums/PitWorkFlags.html" class="tsd-kind-icon">Pit<wbr>Work<wbr>Flags</a>
@@ -241,6 +259,12 @@
 					<li class=" tsd-kind-enum">
 						<a href="enums/UserType.html" class="tsd-kind-icon">User<wbr>Type</a>
 					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/ViewIndentifier.html" class="tsd-kind-icon">View<wbr>Indentifier</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/VoteAction.html" class="tsd-kind-icon">Vote<wbr>Action</a>
+					</li>
 					<li class=" tsd-kind-class">
 						<a href="classes/BaseSocket.html" class="tsd-kind-icon">Base<wbr>Socket</a>
 					</li>
@@ -254,10 +278,25 @@
 						<a href="classes/CompCar.html" class="tsd-kind-icon">Comp<wbr>Car</a>
 					</li>
 					<li class=" tsd-kind-class">
+						<a href="classes/HostInfo.html" class="tsd-kind-icon">Host<wbr>Info</a>
+					</li>
+					<li class=" tsd-kind-class">
 						<a href="classes/IPAddress.html" class="tsd-kind-icon">IPAddress</a>
 					</li>
 					<li class=" tsd-kind-class">
 						<a href="classes/ISP_CPR.html" class="tsd-kind-icon">ISP_<wbr>CPR</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/IS_ACR.html" class="tsd-kind-icon">IS_<wbr>ACR</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/IS_AXI.html" class="tsd-kind-icon">IS_<wbr>AXI</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/IS_AXM.html" class="tsd-kind-icon">IS_<wbr>AXM</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/IS_AXO.html" class="tsd-kind-icon">IS_<wbr>AXO</a>
 					</li>
 					<li class=" tsd-kind-class">
 						<a href="classes/IS_BFN.html" class="tsd-kind-icon">IS_<wbr>BFN</a>
@@ -272,10 +311,28 @@
 						<a href="classes/IS_BTT.html" class="tsd-kind-icon">IS_<wbr>BTT</a>
 					</li>
 					<li class=" tsd-kind-class">
+						<a href="classes/IS_CCH.html" class="tsd-kind-icon">IS_<wbr>CCH</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/IS_CIM.html" class="tsd-kind-icon">IS_<wbr>CIM</a>
+					</li>
+					<li class=" tsd-kind-class">
 						<a href="classes/IS_CNL.html" class="tsd-kind-icon">IS_<wbr>CNL</a>
 					</li>
 					<li class=" tsd-kind-class">
 						<a href="classes/IS_CON.html" class="tsd-kind-icon">IS_<wbr>CON</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/IS_CPP.html" class="tsd-kind-icon">IS_<wbr>CPP</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/IS_CRS.html" class="tsd-kind-icon">IS_<wbr>CRS</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/IS_CSC.html" class="tsd-kind-icon">IS_<wbr>CSC</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/IS_FIN.html" class="tsd-kind-icon">IS_<wbr>FIN</a>
 					</li>
 					<li class=" tsd-kind-class">
 						<a href="classes/IS_ISI.html" class="tsd-kind-icon">IS_<wbr>ISI</a>
@@ -317,6 +374,9 @@
 						<a href="classes/IS_OCO.html" class="tsd-kind-icon">IS_<wbr>OCO</a>
 					</li>
 					<li class=" tsd-kind-class">
+						<a href="classes/IS_PIT.html" class="tsd-kind-icon">IS_<wbr>PIT</a>
+					</li>
+					<li class=" tsd-kind-class">
 						<a href="classes/IS_PLC.html" class="tsd-kind-icon">IS_<wbr>PLC</a>
 					</li>
 					<li class=" tsd-kind-class">
@@ -333,6 +393,9 @@
 					</li>
 					<li class=" tsd-kind-class">
 						<a href="classes/IS_VER.html" class="tsd-kind-icon">IS_<wbr>VER</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/IS_VTN.html" class="tsd-kind-icon">IS_<wbr>VTN</a>
 					</li>
 					<li class=" tsd-kind-class">
 						<a href="classes/InSim.html" class="tsd-kind-icon">In<wbr>Sim</a>
@@ -361,6 +424,9 @@
 					<li class=" tsd-kind-class">
 						<a href="classes/Util.html" class="tsd-kind-icon">Util</a>
 					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/Vec3.html" class="tsd-kind-icon">Vec3</a>
+					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/BaseSocketEvents.html" class="tsd-kind-icon">Base<wbr>Socket<wbr>Events</a>
 					</li>
@@ -374,10 +440,16 @@
 						<a href="interfaces/PacketConstructor.html" class="tsd-kind-icon">Packet<wbr>Constructor</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#IsAcrOptions" class="tsd-kind-icon">Is<wbr>Acr<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
 						<a href="modules.html#IsBfnOptions" class="tsd-kind-icon">Is<wbr>Bfn<wbr>Options</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
 						<a href="modules.html#IsBtnOptions" class="tsd-kind-icon">Is<wbr>Btn<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#IsCppOptions" class="tsd-kind-icon">Is<wbr>Cpp<wbr>Options</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
 						<a href="modules.html#IsIsiOptions" class="tsd-kind-icon">Is<wbr>Isi<wbr>Options</a>
