@@ -33,6 +33,11 @@ export class PacketReader {
     return this.buffer.readInt32LE(this.offset - 4);
   }
 
+  public readFloat(): number {
+    this.offset += 4;
+    return this.buffer.readFloatLE(this.offset - 4);
+  }
+
   public readString(size: number): string {
     this.offset += size;
     return LFSEncoding.getString(this.buffer, this.offset - size, size);

@@ -8,8 +8,8 @@ import { PacketHandler } from './PacketHandler';
 import { PacketType } from '../types/PacketType';
 import { IS_TINY, IS_VER, IS_ISI } from './packets';
 import { TypedEventEmitter } from '../utils/TypedEventEmitter';
-import type { InSimFlags } from '../types/InSimFlags';
 import { Util } from '../utils/Util';
+import type { InSimFlags } from '../types/InSimFlags';
 
 export interface InSimOptions {
   name?: string;

@@ -10,15 +10,18 @@ export class PacketWriter {
     this.offset += count;
   }
 
+  // byte
   public writeUInt8(value: number): void {
     this.buffer.writeUInt8(value, this.offset++);
   }
 
+  // short / ushort
   public writeInt16(value: number): void {
     this.buffer.writeInt16LE(value, this.offset);
     this.offset += 2;
   }
 
+  // int
   public writeUInt16(value: number): void {
     this.buffer.writeUInt16LE(value, this.offset);
     this.offset += 2;
@@ -29,8 +32,14 @@ export class PacketWriter {
     this.offset += 4;
   }
 
+  // long
   public writeInt32(value: number): void {
     this.buffer.writeInt32LE(value, this.offset);
+    this.offset += 4;
+  }
+
+  public writeFloat(value: number): void {
+    this.buffer.writeFloatLE(value, this.offset - 4);
     this.offset += 4;
   }
 
