@@ -1,11 +1,6 @@
 export class IPAddress {
   public static fromLong(value: number): string {
-    return [
-      value & 255,
-      (value >> 8) & 255,
-      (value >> 16) & 255,
-      value >>> 24,
-    ].join('.');
+    return [value & 255, (value >> 8) & 255, (value >> 16) & 255, value >>> 24].join('.');
   }
 
   public static toLong(address: string): number {

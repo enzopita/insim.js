@@ -30,11 +30,7 @@ export class LFSEncoding {
 
   public static readonly defaultEncoding = this.encodingMap.get('L');
 
-  public static getString(
-    buffer: Buffer,
-    index: number,
-    length: number,
-  ): string {
+  public static getString(buffer: Buffer, index: number, length: number): string {
     let text = '';
 
     let encoding = this.defaultEncoding;
