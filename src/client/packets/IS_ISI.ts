@@ -1,4 +1,4 @@
-import { Packet, PacketOptions } from '../../structures/Packet';
+import { Packet } from '../../structures/Packet';
 import { PacketWriter } from '../../utils/packets/PacketWriter';
 import { PacketType } from '../../types/PacketType';
 import { InSimOptions } from '../InSim';

@@ -11,7 +11,7 @@ export class IS_BTN extends Packet {
   public uniqueId!: number;
   public clickId!: number;
   public inst = 0;
-  public buttonStyle!: ButtonStyles;
+  public buttonStyle!: ButtonStyles | number;
   public typeIn = 0;
 
   public top!: number;
