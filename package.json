@@ -23,8 +23,7 @@
     "build": "tsc -p tsconfig.build.json",
     "build:watch": "tsc -p tsconfig.build.json -w",
     "clean": "rimraf dist docs",
-    "docs": "typedoc",
-    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s && git add CHANGELOG.md"
+    "docs": "typedoc"
   },
   "dependencies": {
     "iconv-lite": "^0.6.3",
@@ -37,8 +36,7 @@
     "@types/pino": "^6.3.11",
     "@typescript-eslint/eslint-plugin": "^4.31.0",
     "@typescript-eslint/parser": "^4.31.0",
-    "conventional-changelog-cli": "^2.1.1",
-    "cz-conventional-changelog": "3.3.0",
+    "cz-conventional-changelog": "^3.3.0",
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^4.0.0",
