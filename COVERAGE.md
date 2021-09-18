@@ -4,23 +4,23 @@ Below you have an overview of the implementation of the functions in the library
 
 ## Packets
 
-- [ ] IS_ACR
-- [ ] IS_AXI
-- [ ] IS_AXM
-- [ ] IS_AXO
+- [x] IS_ACR
+- [x] IS_AXI
+- [x] IS_AXM
+- [x] IS_AXO
 - [x] IS_BFN
 - [x] IS_BTC
 - [x] IS_BTN
 - [x] IS_BTT
-- [ ] IS_CCH
-- [ ] IS_CIM
+- [x] IS_CCH
+- [x] IS_CIM
 - [x] IS_CNL
 - [x] IS_CON
-- [ ] IS_CPP
+- [x] IS_CPP
 - [x] IS_CPR
-- [ ] IS_CRS
-- [ ] IS_CSC
-- [ ] IS_FIN
+- [x] IS_CRS
+- [x] IS_CSC
+- [x] IS_FIN
 - [ ] IS_FLG
 - [ ] IS_HCP
 - [ ] IS_HLV
@@ -44,7 +44,7 @@ Below you have an overview of the implementation of the functions in the library
 - [x] IS_OCO
 - [ ] IS_PEN
 - [ ] IS_PFL
-- [ ] IS_PIT
+- [x] IS_PIT
 - [ ] IS_PLA
 - [x] IS_PLC
 - [x] IS_PLL
@@ -67,7 +67,7 @@ Below you have an overview of the implementation of the functions in the library
 - [ ] IS_TTC
 - [x] IS_UCO
 - [x] IS_VER
-- [ ] IS_VTN
+- [x] IS_VTN
 
 ## Classes and flags
 
