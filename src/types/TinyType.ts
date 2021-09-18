@@ -1,5 +1,5 @@
 /**
- * Represents the <see cref="IS_TINY"/> SubT.
+ * Represents the IS_TINY SubT.
  */
 export enum TinyType {
   /**

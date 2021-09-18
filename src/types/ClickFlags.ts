@@ -1,5 +1,5 @@
 /**
- * Represents the <see cref="IS_BTC"/> CFlags.
+ * Represents the IS_BTC CFlags.
  */
 export enum ClickFlags {
   /**

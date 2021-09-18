@@ -1,5 +1,5 @@
 /**
- * Represents the <see cref="IS_NPL"/> PType.
+ * Represents the IS_NPL PType.
  */
 export enum PlayerTypes {
   /**

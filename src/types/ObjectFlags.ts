@@ -1,5 +1,5 @@
 /**
- * Represents the <see cref="IS_OBH"/> OBHFlags.
+ * Represents the IS_OBH OBHFlags.
  */
 export enum ObjectFlags {
   /**

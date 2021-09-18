@@ -1,5 +1,5 @@
 /**
- * Represents the <see cref="IS_HLV"/> packets's HLVC property.
+ * Represents the IS_HLV packets's HLVC property.
  */
 export enum HlvcFlags {
   /**

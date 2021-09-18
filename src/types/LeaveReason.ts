@@ -1,5 +1,5 @@
 /**
- * Enumeration for the <see cref="IS_CNL"/> disconnect reason.
+ * Enumeration for the IS_CNL disconnect reason.
  */
 export enum LeaveReason {
   /**

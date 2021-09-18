@@ -1,39 +1,39 @@
-/// <summary>
-/// Represents the penalty values.
-/// </summary>
+/**
+ * Represents the penalty values.
+ */
 export enum PenaltyValue {
-  /// <summary>
-  /// No penalty.
-  /// </summary>
+  /**
+   * No penalty.
+   */
   PENALTY_NONE,
 
-  /// <summary>
-  /// Drive-through.
-  /// </summary>
+  /**
+   * Drive-through.
+   */
   PENALTY_DT,
 
-  /// <summary>
-  /// Drive-through valid.
-  /// </summary>
+  /**
+   * Drive-through valid.
+   */
   PENALTY_DT_VALID,
 
-  /// <summary>
-  /// Stop and go.
-  /// </summary>
+  /**
+   * Stop and go.
+   */
   PENALTY_SG,
 
-  /// <summary>
-  /// Stop and go valid.
-  /// </summary>
+  /**
+   * Stop and go valid.
+   */
   PENALTY_SG_VALID,
 
-  /// <summary>
-  /// 30 seconds.
-  /// </summary>
+  /**
+   * 30 seconds.
+   */
   PENALTY_30,
 
-  /// <summary>
-  /// 45 seconds.
-  /// </summary>
+  /**
+   * 45 seconds.
+   */
   PENALTY_45,
 }

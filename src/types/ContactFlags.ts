@@ -1,5 +1,5 @@
 /**
- * Represents the <see cref="CarContact"/> Info.
+ * Represents the CarContact Info.
  */
 export enum ContactFlags {
   /**

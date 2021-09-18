@@ -1,36 +1,36 @@
 export enum ViewIndentifier {
-  /// <summary>
-  /// Arcade.
-  /// </summary>
+  /**
+   * Arcade.
+   */
   VIEW_FOLLOW,
 
-  /// <summary>
-  /// Helicopter.
-  /// </summary>
+  /**
+   * Helicopter.
+   */
   VIEW_HELI,
 
-  /// <summary>
-  /// TV camera.
-  /// </summary>
+  /**
+   * TV camera.
+   */
   VIEW_CAM,
 
-  /// <summary>
-  /// Driver.
-  /// </summary>
+  /**
+   * Driver.
+   */
   VIEW_DRIVER,
 
-  /// <summary>
-  /// Custom
-  /// </summary>
+  /**
+   * Custom
+   */
   VIEW_CUSTOM,
 
-  /// <summary>
-  /// Max
-  /// </summary>
+  /**
+   * Max
+   */
   VIEW_MAX,
 
-  /// <summary>
-  /// Viewing another player
-  /// </summary>
+  /**
+   * Viewing another player
+   */
   VIEW_ANOTHER = 255,
 }

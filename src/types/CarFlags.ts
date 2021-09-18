@@ -1,5 +1,5 @@
 /**
- * Represents the <see cref="IS_PLC"/> Cars property.
+ * Represents the IS_PLC Cars property.
  */
 export enum CarFlags {
   /**

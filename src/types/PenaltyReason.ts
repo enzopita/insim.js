@@ -1,39 +1,39 @@
-/// <summary>
-/// Represents the penalty reason.
-/// </summary>
+/**
+ * Represents the penalty reason.
+ */
 export enum PenaltyReason {
-  /// <summary>
-  /// Unknown or cleared penalty
-  /// </summary>
+  /**
+   * Unknown or cleared penalty
+   */
   PENR_UNKNOWN,
 
-  /// <summary>
-  /// Penalty given by admin
-  /// </summary>
+  /**
+   * Penalty given by admin
+   */
   PENR_ADMIN,
 
-  /// <summary>
-  /// Wrong way driving
-  /// </summary>
+  /**
+   * Wrong way driving
+   */
   PENR_WRONG_WAY,
 
-  /// <summary>
-  /// Starting before green light
-  /// </summary>
+  /**
+   * Starting before green light
+   */
   PENR_FALSE_START,
 
-  /// <summary>
-  /// Speeding in pit lane
-  /// </summary>
+  /**
+   * Speeding in pit lane
+   */
   PENR_SPEEDING,
 
-  /// <summary>
-  /// Stop-go pit stop too short
-  /// </summary>
+  /**
+   * Stop-go pit stop too short
+   */
   PENR_STOP_SHORT,
 
-  /// <summary>
-  /// Compulsory stop is too late
-  /// </summary>
+  /**
+   * Compulsory stop is too late
+   */
   PENR_STOP_LATE,
 }

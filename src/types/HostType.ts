@@ -1,5 +1,5 @@
 /**
- * Represents the <see cref="IS_ISM"/> Host.
+ * Represents the IS_ISM Host.
  */
 export enum HostType {
   /**

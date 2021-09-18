@@ -1,24 +1,24 @@
-/// <summary>
-/// Represents <see cref="IS_ACR"/> Result.
-/// </summary>
+/**
+ * Represents IS_ACR Result.
+ */
 export enum AdminResult {
-  /// <summary>
-  /// No admin command processed.
-  /// </summary>
+  /**
+   * No admin command processed.
+   */
   None = 0,
 
-  /// <summary>
-  /// Admin command has been processed.
-  /// </summary>
+  /**
+   * Admin command has been processed.
+   */
   Processed = 1,
 
-  /// <summary>
-  /// Admin command was rejected.
-  /// </summary>
+  /**
+   * Admin command was rejected.
+   */
   Rejected = 2,
 
-  /// <summary>
-  /// The admin command was not recognised.
-  /// </summary>
+  /**
+   * The admin command was not recognised.
+   */
   Unknown = 3,
 }

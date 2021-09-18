@@ -1,5 +1,5 @@
 /**
- * Represents the <see cref="CompCar"/> Info.
+ * Represents the CompCar Info.
  */
 export enum CompCarFlags {
   /**
@@ -18,12 +18,12 @@ export enum CompCarFlags {
   CCI_LAG = 32,
 
   /**
-   * This is the first <see cref="CompCar"/> in this set of <see cref="IS_MCI"/> packets
+   * This is the first CompCar in this set of IS_MCI packets
    */
   CCI_FIRST = 64,
 
   /**
-   * This is the last <see cref="CompCar"/> in this set of <see cref="IS_MCI"/> packets
+   * This is the last CompCar in this set of IS_MCI packets
    */
   CCI_LAST = 128,
 }

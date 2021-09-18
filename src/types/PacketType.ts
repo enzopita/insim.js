@@ -258,47 +258,47 @@ export enum PacketType {
   ISP_CON,
 
   /**
-   * contact car + object (collision report)
+   * Contact car + object (collision report)
    */
   ISP_OBH,
 
   /**
-   * report incidents that would violate HLVC
+   * Report incidents that would violate HLVC
    */
   ISP_HLV,
 
   /**
-   * player cars
+   * Player cars
    */
   ISP_PLC,
 
   /**
-   * autocross multiple objects
+   * Autocross multiple objects
    */
   ISP_AXM,
 
   /**
-   * admin command report
+   * Admin command report
    */
   ISP_ACR,
 
   /**
-   * car handicaps
+   * Car handicaps
    */
   ISP_HCP,
 
   /**
-   * new connection - extra info for host.
+   * New connection - extra info for host.
    */
   ISP_NCI,
 
   /**
-   * join request
+   * Join request
    */
   ISP_JRR,
 
   /**
-   * report InSim checkpoint / InSim circle
+   * Report InSim checkpoint / InSim circle
    */
   ISP_UCO,
 

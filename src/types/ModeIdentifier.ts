@@ -1,39 +1,39 @@
-/// <summary>
-/// Modes to represent the IS_CIM Mode attribute.
-/// </summary>
+/**
+ * Modes to represent the IS_CIM Mode attribute.
+ */
 export enum ModeIdentifier {
-  /// <summary>
-  /// Not in a special mode.
-  /// </summary>
+  /**
+   * Not in a special mode.
+   */
   CIM_NORMAL,
 
-  /// <summary>
-  /// In the options menu.
-  /// </summary>
+  /**
+   * In the options menu.
+   */
   CIM_OPTIONS,
 
-  /// <summary>
-  /// In the host's options menu.
-  /// </summary>
+  /**
+   * In the host's options menu.
+   */
   CIM_HOST_OPTIONS,
 
-  /// <summary>
-  /// In the garage.
-  /// </summary>
+  /**
+   * In the garage.
+   */
   CIM_GARAGE,
 
-  /// <summary>
-  /// In the car selection menu.
-  /// </summary>
+  /**
+   * In the car selection menu.
+   */
   CIM_CAR_SELECT,
 
-  /// <summary>
-  /// In the track selection menu.
-  /// </summary>
+  /**
+   * In the track selection menu.
+   */
   CIM_TRACK_SELECT,
 
-  /// <summary>
-  /// In the free view mode (Shift + U).
-  /// </summary>
+  /**
+   * In the free view mode (Shift + U).
+   */
   CIM_SHIFTU,
 }

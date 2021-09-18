@@ -1,24 +1,24 @@
-/// <summary>
-/// Represents the vote actions.
-/// </summary>
+/**
+ * Represents the vote actions.
+ */
 export enum VoteAction {
-  /// <summary>
-  /// No vote.
-  /// </summary>
+  /**
+   * No vote.
+   */
   VOTE_NONE,
 
-  /// <summary>
-  /// End race.
-  /// </summary>
+  /**
+   * End race.
+   */
   VOTE_END,
 
-  /// <summary>
-  /// Restart session.
-  /// </summary>
+  /**
+   * Restart session.
+   */
   VOTE_RESTART,
 
-  /// <summary>
-  /// Qualify.
-  /// </summary>
+  /**
+   * Qualify.
+   */
   VOTE_QUALIFY,
 }

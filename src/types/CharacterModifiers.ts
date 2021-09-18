@@ -1,5 +1,5 @@
 /**
- * Represents the <see cref="IS_SCH"/> flags.
+ * Represents the IS_SCH flags.
  */
 export enum CharacterModifiers {
   /**

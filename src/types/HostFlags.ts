@@ -20,12 +20,12 @@ export enum HostFlags {
   HOS_S2 = 8,
 
   /**
-   * First <see cref="HInfo"/> in this set of <see cref="IR_HOS"/> packets.
+   * First HInfo in this set of IR_HOS packets.
    */
   HOS_FIRST = 64,
 
   /**
-   * Last <see cref="HInfo"/> in this set of <see cref="IR_HOS"/> packets.
+   * Last HInfo in this set of IR_HOS packets.
    */
   HOS_LAST = 128,
 }

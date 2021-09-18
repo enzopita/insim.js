@@ -1,5 +1,5 @@
 /**
- * Represents the <see cref="IS_ISI"/> Flags.
+ * Represents the IS_ISI Flags.
  */
 export enum InSimFlags {
   /**
@@ -18,32 +18,32 @@ export enum InSimFlags {
   ISF_LOCAL = 4,
 
   /**
-   * Keep colors in <see cref="IS_MSO"/> packet text.
+   * Keep colors in IS_MSO packet text.
    */
   ISF_MSO_COLS = 8,
 
   /**
-   * Enable <see cref="IS_NLP"/> packets.
+   * Enable IS_NLP packets.
    */
   ISF_NLP = 16,
 
   /**
-   * Enable <see cref="IS_MCI"/> packets.
+   * Enable IS_MCI packets.
    */
   ISF_MCI = 32,
 
   /**
-   * Enable <see cref="IS_CON"/> packets.
+   * Enable IS_CON packets.
    */
   ISF_CON = 64,
 
   /**
-   * Enable <see cref="IS_OBH"/> packets.
+   * Enable IS_OBH packets.
    */
   ISF_OBH = 128,
 
   /**
-   * Enable <see cref="IS_HLV"/> packets.
+   * Enable IS_HLV packets.
    */
   ISF_HLV = 256,
 

@@ -1,5 +1,5 @@
 /**
- * Represents <see cref="IS_MSO"/> user types.
+ * Represents IS_MSO user types.
  */
 export enum UserType {
   /**

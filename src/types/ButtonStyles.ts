@@ -1,5 +1,5 @@
 /**
- * Represents the <see cref="IS_BTN"/> BStyle.
+ * Represents the IS_BTN BStyle.
  */
 export enum ButtonStyles {
   /**
@@ -18,7 +18,7 @@ export enum ButtonStyles {
   ISB_C4 = 4,
 
   /**
-   * When clicked this button will send a <see cref="IS_BTC"/> packet.
+   * When clicked this button will send a IS_BTC packet.
    */
   ISB_CLICK = 8,
 
